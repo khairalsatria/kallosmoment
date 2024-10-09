@@ -7,13 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent"> --}}
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/aboutus">ABOUT US</a>
+            <a class="nav-link active" aria-current="page" href="/about">ABOUT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">GALLERY</a>
+            <a class="nav-link active" aria-current="page" href="/index">GALLERY</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">PACKAGES</a>
+            <a class="nav-link active" aria-current="page" href="/kategori">PACKAGES</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/contact">CONTACT</a>
