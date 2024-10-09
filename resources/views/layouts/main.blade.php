@@ -9,12 +9,13 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+
 </head>
 
 <body class="d-flex flex-column h-100">
 
-    @include('layouts.header')
 
+    @include('layouts.header')
     {{--
 
     @include('dashboard.layouts.sidebar') --}}
@@ -22,8 +23,8 @@
     <!-- Begin page content -->
     <main class="flex-shrink-0 content">
         <div class="container">
-                @yield('content')
-            </div>
+            @yield('content')
+        </div>
     </main>
 
     @include('layouts.footer')
@@ -33,4 +34,4 @@
 </body>
 
 </html>
-x
+
