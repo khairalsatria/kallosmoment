@@ -1188,6 +1188,12 @@ a {
   opacity: 1;
 }
 
+.product-item1 .image-holder img {
+    border: 2px solid #8C907E; /* Menambahkan border hitam di sekitar gambar */
+    box-sizing: border-box;  /* Memastikan ukuran border masuk dalam dimensi gambar */
+  }
+
+
 /* rotating text */
 .text-rotate {
   animation: rotation 50s infinite linear;
@@ -1224,7 +1230,7 @@ a {
     height: 790px;
   }
 }
-/* 
+/*
 .product-thumbnail-slider .swiper-slide {
   height: 200px;
 } */
@@ -1328,6 +1334,8 @@ a {
 .product-info .item-title {
   width: 100%;
 }
+
+
 
 .swatch-element .swatch-label {
   font-weight: 400;
