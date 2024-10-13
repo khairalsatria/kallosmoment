@@ -298,7 +298,7 @@
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
                     <a href="index.html">
-                      <img src="image/packages/basic.jpg" alt="categories" class="product-image img-fluid">
+                      <img src="image/packages/basic1.jpg" alt="categories" class="product-image img-fluid">
                     </a>
                     <a href="index.html" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
