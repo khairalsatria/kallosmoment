@@ -11,35 +11,21 @@
             <div class="social-links">
               <ul class="list-unstyled d-flex flex-wrap gap-3">
                 <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#facebook"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#twitter"></use>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="text-secondary">
+                  <a href="https://www.youtube.com/@hafizenaldo8068" class="text-secondary">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#youtube"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-secondary">
+                  <a href="https://www.tiktok.com/@kallosmoments" class="text-secondary">
                     <svg width="24" height="24" viewBox="0 0 24 24">
-                      <use xlink:href="#pinterest"></use>
+                      <use xlink:href="#tiktok"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-secondary">
+                  <a href="https://www.instagram.com/kallosmoments_" class="text-secondary">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#instagram"></use>
                     </svg>
@@ -57,7 +43,7 @@
                 <a href="index.html" class="item-anchor">Home</a>
               </li>
               <li class="menu-item">
-                <a href="index.html" class="item-anchor">Register</a>
+                <a href="register.blade.php" class="item-anchor">Register</a>
               </li>
               <li class="menu-item">
                 <a href="blog.html" class="item-anchor">Login</a>
@@ -92,7 +78,7 @@
           <div class="footer-menu footer-menu-004 border-animation-left">
             <h5 class="widget-title text-uppercase mb-4">Contact Us</h5>
             <p>Do you have any questions or suggestions? <a href="mailto:contact@yourcompany.com"
-                class="item-anchor">kallosmomentofficial@gmail.com</a>
+                class="item-anchor">kallosmomentofficial@gmail.com<br></a>
             <a href="tel:+43 720 11 52 78" class="item-anchor">+62 812 3456 7890</a>
             </p>
           </div>
@@ -104,17 +90,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 d-flex flex-wrap">
-            <div class="shipping">
-              <span>We ship with:</span>
-              <img src="images/arct-icon.png" alt="icon">
-              <img src="images/dhl-logo.png" alt="icon">
-            </div>
-            <div class="payment-option">
-              <span>Payment Option:</span>
-              <img src="images/visa-card.png" alt="card">
-              <img src="images/paypal-card.png" alt="card">
-              <img src="images/master-card.png" alt="card">
-            </div>
+          <div class="shipping">
+   <span>We ship with:</span>
+   <img src="images/jne.png" alt="JNE" width="50" height="auto">
+   <img src="images/jnt.png" alt="JNT" width="50" height="auto">
+   <img src="images/tiki.png" alt="TIKI" width="50" height="auto">
+</div>
           </div>
           <div class="col-md-6 text-end">
             <p>© Copyright 2024 Kallos Moment. All rights reserved.</p>

@@ -443,47 +443,47 @@
 <br>
       <section class="instagram position-relative">
         <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
-          <a href="https://www.instagram.com/templatesjungle/" class="btn btn-dark px-5">Follow us on Instagram</a>
+          <a href="https://www.instagram.com/kallosmoments_/" class="btn btn-dark px-5">Follow us on Instagram</a>
         </div>
         <div class="row g-0">
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery19.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery20.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery14.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery5.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery17.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>
           </div>
           <div class="col-6 col-sm-4 col-md-2">
             <div class="insta-item">
-              <a href="https://www.instagram.com/templatesjungle/" target="_blank">
+              <a href="https://www.instagram.com/kallosmoments_/" target="_blank">
                 <img src="image/gallery/gallery18.jpg" alt="instagram" class="insta-image img-fluid">
               </a>
             </div>

@@ -23,7 +23,7 @@ class PackageSeeder extends Seeder
             'deskripsi' => 'Sesi foto selama 4 jam dengan 50 foto digital dan 2 cetakan.',
             'harga' => 1000000,
         ]);
-
+        
         Package::create([
             'nama' => 'Paket Ultimate',
             'deskripsi' => 'Sesi foto sepanjang hari dengan 100 foto digital, 5 cetakan, dan album foto.',
