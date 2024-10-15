@@ -49,7 +49,7 @@
               </a>
             </li>
             <li class="d-none d-lg-block">
-              <a href="index.html" class="text-uppercase mx-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+              <a href="/register" class="text-uppercase mx-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
                 aria-controls="offcanvasCart">Register<span class="cart-count"></span>
               </a>
             </li>

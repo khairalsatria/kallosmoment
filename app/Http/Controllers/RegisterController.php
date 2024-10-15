@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     public function index()  {
-        return view('layouts.register');
+        return view('user.register');
 
     }
 }

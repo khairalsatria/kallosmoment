@@ -43,7 +43,7 @@
                 <a href="index.html" class="item-anchor">Home</a>
               </li>
               <li class="menu-item">
-                <a href="register.blade.php" class="item-anchor">Register</a>
+                <a href="/register" class="item-anchor">Register</a>
               </li>
               <li class="menu-item">
                 <a href="blog.html" class="item-anchor">Login</a>

@@ -142,6 +142,7 @@ iframe {
 [ Utility ]*/
 .txt1 {
   font-family: Poppins-Regular;
+  margin-bottom: 5px;
   font-size: 13px;
   color: #666666;
   line-height: 1.5;
@@ -372,7 +373,7 @@ iframe {
   width: 300%;
   height: 100%;
   background: #a64bf4;
-  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+  background: -webkit-linear-gradient(right, #2c3031, #2c3031, #2c3031, #2c3031);
   background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
   background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
   background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
@@ -391,6 +392,7 @@ iframe {
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
+  margin-bottom: 5px;
 
   display: -webkit-box;
   display: -webkit-flex;
