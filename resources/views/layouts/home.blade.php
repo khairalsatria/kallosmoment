@@ -67,7 +67,7 @@
           <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
               <h4 class="text-uppercase">Our Gallery</h4>
-              <a href="index.html" class="btn-link">View All Gallery</a>
+              <a href="index.html" class="btn-link">View All Gallery >>></a>
             </div>
             <div class="swiper product-swiper open-up" data-aos="zoom-out">
               <div class="swiper-wrapper d-flex">
@@ -290,7 +290,7 @@
         <div class="container">
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
             <h4 class="text-uppercase">OUR PACKAGES</h4>
-            <a href="index.html" class="btn-link">View All Packages</a>
+            <a href="/user.pemesanan" class="btn-link">View All Packages >>></a>
           </div>
           <div class="swiper product-swiper open-up" data-aos="zoom-out">
             <div class="swiper-wrapper d-flex">

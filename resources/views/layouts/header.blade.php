@@ -25,7 +25,7 @@
                     <a class="nav-link" href="#">Home</a>
                   </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="/register">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Gallery</a>
@@ -45,13 +45,12 @@
         <div class="col-3 col-lg-auto">
           <ul class="list-unstyled d-flex m-0">
             <li class="d-none d-lg-block">
-              <a href="index.html" class="text-uppercase mx-">Login<span class="wishlist-count"></span>
+              <a href="/login" class="text-uppercase mx-2">Login<span class="wishlist-count"></span>
               </a>
             </li>
             <li class="d-none d-lg-block">
-              <a href="/register" class="text-uppercase mx-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-                aria-controls="offcanvasCart">Register<span class="cart-count"></span>
-              </a>
+                <a href="/register" class="text-uppercase mx-5">Register<span class="wishlist-count"></span>
+                </a>
             </li>
             <li class="d-lg-none">
               <a href="#" class="mx-2">
