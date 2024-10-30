@@ -3,7 +3,7 @@
       <div class="row justify-content-between align-items-center w-100">
 
         <div class="col-auto">
-          <a class="navbar-brand text-white" href="index.html">
+          <a class="navbar-brand text-white" href="#home">
             <img src="image/kallosmoment.png" alt="icon">
           </a>
         </div>
@@ -22,19 +22,19 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">About Us</a>
+                    <a class="nav-link" href="#home">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Gallery</a>
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Packages</a>
+                    <a class="nav-link" href="#packages">Packages</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#contact">Contact</a>
                 </li>
 
               </ul>
@@ -52,13 +52,7 @@
                 <a href="/register" class="text-uppercase mx-5">Register<span class="wishlist-count"></span>
                 </a>
             </li>
-            <li class="d-lg-none">
-              <a href="#" class="mx-2">
-                <svg width="24" height="24" viewBox="0 0 24 24">
-                  <use xlink:href="#heart"></use>
-                </svg>
-              </a>
-            </li>
+            
             <li class="search-box" class="mx-2">
               <a href="#search" class="search-button">
                 <svg width="24" height="24" viewBox="0 0 24 24">

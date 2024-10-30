@@ -1,69 +1,60 @@
 @extends('layouts.main')
 @section('content')
 
-
-
-<body class="homepage">
-
-
-    {{-- <section id="billboard" class="bg-light py-5"> --}}
-    {{-- <section class="collection bg-light position-relative py-5"> --}}
+<body id="home" class="homepage">
 <br>
-<br>
-        <div class="container">
+    <div class="container">
         <div class="row justify-content-center">
             <h3 class="section-title text-center mt-2" data-aos="fade-up">Kallos Moment</h3>
             <div class="col-md-11 text-center" data-aos="fade-up" data-aos-delay="300">
-              <p>Selamat datang di dunia fotografi saya! Kami adalah kallos moments, vendor fotografi yang bersemangat, berasal dari Sumatera Barat, sekarang berbasis di Padang yang indah. Dengan mata yang tajam terhadap detail dan kecintaan untuk mengabadikan momen paling berharga dalam hidup, kami mengkhususkan diri dalam fotografi pernikahan.
-            </p>
+                <p>Selamat datang di dunia fotografi saya! Kami adalah kallos moments, vendor fotografi yang bersemangat, berasal dari Sumatera Barat, sekarang berbasis di Padang yang indah. Dengan mata yang tajam terhadap detail dan kecintaan untuk mengabadikan momen paling berharga dalam hidup, kami mengkhususkan diri dalam fotografi pernikahan.</p>
             </div>
-          </div>
-
+        </div>
+    </div>
 
     <section class="video py-5 overflow-hidden">
         <div class="container-fluid">
-          <div class="row">
-            <div class="video-content open-up" data-aos="zoom-out">
-              <div class="video-bg">
-                <img src="image/gallery/gallery23.jpg" alt="video" class="video-image img-fluid">
-              </div>
-              <div class="video-player">
-                <a class="youtube" href="https://www.youtube.com/embed/pjtsGzQjFM4">
-                  <svg width="24" height="24" viewBox="0 0 24 24">
-                    <use xlink:href="#play"></use>
-                  </svg>
-                  <img src="image/curve.png" alt="pattern" class="text-rotate">
-                </a>
-              </div>
+            <div class="row">
+                <div class="video-content open-up" data-aos="zoom-out">
+                    <div class="video-bg">
+                        <img src="image/gallery/gallery23.jpg" alt="video" class="video-image img-fluid">
+                    </div>
+                    <div class="video-player">
+                        <a class="youtube" href="https://www.youtube.com/embed/pjtsGzQjFM4">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="#play"></use>
+                            </svg>
+                            <img src="image/curve.png" alt="pattern" class="text-rotate">
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <div class="container">
-        <div class="row">
-          <div class="collection-item d-flex flex-wrap my-5">
-            <div class="col-md-6 column-container">
-              <div class="image-holder">
-                <img src="image/gallery/gallery16.jpg" alt="collection" class="product-image img-fluid">
-              </div>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="collection-item d-flex flex-wrap my-5">
+                    <div class="col-md-6 column-container">
+                        <div class="image-holder">
+                            <img src="image/gallery/gallery16.jpg" alt="collection" class="product-image img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-6 column-container bg-white">
+                        <div class="collection-content p-5 m-0 m-md-2">
+                            <h3 class="element-title text-uppercase">About Us</h3>
+                            <p>Perjalanan kami telah membawa kami ke seluruh Indonesia, tetapi matahari terbenam yang menakjubkan dan pemandangan Santorini yang menakjubkan telah menjadi inspirasi saya. Sebagai fotografer pernikahan, saya bersemangat untuk menawarkan layanan saya tidak hanya di Padang tetapi juga di seluruh Indonesia, menciptakan kenangan abadi di mana pun cerita Anda terungkap.</p>
+                            <p>Di halaman saya, Anda akan menemukan berbagai paket fotografi yang disesuaikan dengan kebutuhan Anda, sesi pasangan, pertunangan, pernikahan. Saya berdedikasi untuk menangkap kisah unik Anda dengan kreativitas dan profesionalisme.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 column-container bg-white">
-              <div class="collection-content p-5 m-0 m-md-2">
-                <h3 class="element-title text-uppercase">About Us</h3>
-                <p>Perjalanan kami telah membawa kami ke seluruh Indonesia, tetapi matahari terbenam yang menakjubkan dan pemandangan Santorini yang menakjubkan telah menjadi inspirasi saya. Sebagai fotografer pernikahan, saya bersemangat untuk menawarkan layanan saya tidak hanya di Padang tetapi juga di seluruh Indonesia, menciptakan kenangan abadi di mana pun cerita Anda terungkap.
-                </p> <p>Di halaman saya, Anda akan menemukan berbagai paket fotografi yang disesuaikan dengan kebutuhan Anda, sesi pasangan, pertunangan, pernikahan. Saya berdedikasi untuk menangkap kisah unik Anda dengan kreativitas dan profesionalisme.
-
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
 
-    <section id="new-arrival" class="new-arrival product-carousel py-5 position-relative overflow-hidden">
+    <section id="gallery" class="new-arrival product-carousel py-5 position-relative overflow-hidden">
           <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
               <h4 class="text-uppercase">Our Gallery</h4>
@@ -286,30 +277,30 @@
 
 
 
-      <section id="best-sellers" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
+      <section id="packages" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
         <div class="container">
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
             <h4 class="text-uppercase">OUR PACKAGES</h4>
-            <a href="/user.pemesanan" class="btn-link">View All Packages >>></a>
+            <a href="/user.pemesanan" class="btn-link">Booking</a>
           </div>
           <div class="swiper product-swiper open-up" data-aos="zoom-out">
             <div class="swiper-wrapper d-flex">
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/basic1.jpg" alt="categories" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">BASIC PACKAGE</a>
+                        <a href="/user.pemesanan">BASIC PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR 3.000.000</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR 3.000.000</span></a>
                     </div>
                   </div>
                 </div>
@@ -317,19 +308,19 @@
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/silver.jpg" alt="product" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">SILVER PACKAGE</a>
+                        <a href="/user.pemesanan">SILVER PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR 4.000.000</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR 4.000.000</span></a>
                     </div>
                   </div>
                 </div>
@@ -337,19 +328,19 @@
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/gold.jpg" alt="categories" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">GOLD PACKAGE</a>
+                        <a href="/user.pemesanan">GOLD PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR 6.500.000</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR 6.500.000</span></a>
                     </div>
                   </div>
                 </div>
@@ -357,19 +348,19 @@
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/prewedding.jpg" alt="categories" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">PREWEDDING PACKAGE</a>
+                        <a href="/user.pemesanan">PREWEDDING PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR 1.800.000</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR 1.800.000</span></a>
                     </div>
                   </div>
                 </div>
@@ -377,19 +368,19 @@
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/custom.jpg" alt="categories" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">CUSTOM PACKAGE</a>
+                        <a href="/user.pemesanan">CUSTOM PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR X.XXX.XXX</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR X.XXX.XXX</span></a>
                     </div>
                   </div>
                 </div>
@@ -397,19 +388,19 @@
               <div class="swiper-slide">
                 <div class="product-item1 image-zoom-effect link-effect">
                   <div class="image-holder">
-                    <a href="index.html">
+                    <a href="/user.pemesanan">
                       <img src="image/packages/fileonly.jpg" alt="categories" class="product-image img-fluid">
                     </a>
-                    <a href="index.html" class="btn-icon btn-wishlist">
+                    <a href="/user.pemesanan" class="btn-icon btn-wishlist">
                       <svg width="24" height="24" viewBox="0 0 24 24">
 
                       </svg>
                     </a>
                     <div class="product-content">
                       <h5 class="text-uppercase fs-5 mt-3">
-                        <a href="index.html">FILE ONLY PACKAGE</a>
+                        <a href="/user.pemesanan">FILE ONLY PACKAGE</a>
                       </h5>
-                      <a href="index.html" class="text-decoration-none" data-after="Book Now"><span>IDR 1.500.000</span></a>
+                      <a href="/user.pemesanan" class="text-decoration-none" data-after="Book Now"><span>IDR 1.500.000</span></a>
                     </div>
                   </div>
                 </div>
@@ -441,7 +432,7 @@
 
 
 <br>
-      <section class="instagram position-relative">
+      <section id="contact" class="instagram position-relative">
         <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">
           <a href="https://www.instagram.com/kallosmoments_/" class="btn btn-dark px-5">Follow us on Instagram</a>
         </div>

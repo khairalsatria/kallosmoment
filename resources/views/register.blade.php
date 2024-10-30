@@ -1,72 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en">
 
 <head>
     <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css1/style.css">
+    <link rel="stylesheet" type="text/css" href="../../vendors/mdi/css/materialdesignicons.min.css">
 </head>
+
 <body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                <div class="row flex-grow">
+                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                        <div class="auth-form-transparent text-left p-3">
+                            <div class="brand-logo">
+                                <img src="image/kallosmoment.png" alt="icon">
+                            </div>
+                            <h4>New here?</h4>
+                            <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
+                            <form class="pt-3" method="POST" action="{{ url('/register') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-account-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg border-left-0" name="name" placeholder="Full Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-email-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="email" class="form-control form-control-lg border-left-0" name="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg border-left-0" name="password" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg border-left-0" name="password_confirmation" placeholder="Confirm Password" required>
+                                    </div>
+                                </div>
 
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <form class="login100-form validate-form" method="POST" action="{{ url('/register') }}">
-                    @csrf
-                    <span class="login100-form-title p-b-20">
-                        <img src="image/kallosmoment.png" alt="icon">
-                    </span>
-                    <span class="login100-form-title p-b-30">
-                        Register
-                    </span>
-
-                    <div class="wrap-input100 validate-input" data-validate="Enter your name">
-                        <input class="input100" type="text" name="name" placeholder="Full Name" required>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-                        <input class="input100" type="email" name="email" placeholder="Email" required>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <span class="btn-show-pass">
-                            <i class="zmdi zmdi-eye"></i>
-                        </span>
-                        <input class="input100" type="password" name="password" placeholder="Password" required>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Confirm your password">
-                        <input class="input100" type="password" name="password_confirmation" placeholder="Confirm Password" required>
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn">
-                                Sign Up
-                            </button>
+                                <div class="mt-3">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN UP</button>
+                                </div>
+                                <div class="text-center mt-4 font-weight-light">
+                                    Already have an account? <a href="{{ url('/login') }}" class="text-primary">Login</a>
+                                </div>
+                            </form>
                         </div>
-                        <div class="text-center p-t-40">
-                            <span class="txt1">Already have an account?</span>
-                            <a class="txt2" href="{{ url('/login') }}">Sign In Here</a>
-                        </div>
                     </div>
-                </form>
+                    <div class="col-lg-6 login-half-bg d-flex flex-row" style="background-image: url('image/gallery/gallery30.jpg'); background-size: cover;">
+                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2024 Kallos Moment. All rights reserved.</p></div>
+                </div>
             </div>
+            <!-- content-wrapper ends -->
         </div>
+        <!-- page-body-wrapper ends -->
     </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
 
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js1/main.js"></script>
 
 </body>
 </html>

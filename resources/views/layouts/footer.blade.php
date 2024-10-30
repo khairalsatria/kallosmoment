@@ -40,16 +40,16 @@
             <h5 class="widget-title text-uppercase mb-4">Quick Links</h5>
             <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
               <li class="menu-item">
-                <a href="index.html" class="item-anchor">Home</a>
+                <a href="#home" class="item-anchor">Home</a>
               </li>
               <li class="menu-item">
                 <a href="/register" class="item-anchor">Register</a>
               </li>
               <li class="menu-item">
-                <a href="blog.html" class="item-anchor">Login</a>
+                <a href="/login" class="item-anchor">Login</a>
               </li>
               <li class="menu-item">
-                <a href="styles.html" class="item-anchor">Search</a>
+                <a href="/user.pemesanan" class="item-anchor">Booking</a>
               </li>
 
             </ul>
@@ -60,16 +60,16 @@
             <h5 class="widget-title text-uppercase mb-4">Help & Info</h5>
             <ul class="menu-list list-unstyled text-uppercase border-animation-left fs-6">
               <li class="menu-item">
-                <a href="#" class="item-anchor">About</a>
+                <a href="#about" class="item-anchor">About</a>
               </li>
               <li class="menu-item">
-                <a href="index.html" class="item-anchor">Gallery</a>
+                <a href="#gallery" class="item-anchor">Gallery</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="item-anchor">Packages</a>
+                <a href="#packages" class="item-anchor">Packages</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="item-anchor">Contact</a>
+                <a href="#contact" class="item-anchor">Contact</a>
               </li>
             </ul>
           </div>
@@ -92,13 +92,13 @@
           <div class="col-md-6 d-flex flex-wrap">
           <div class="shipping">
    <span>We ship with:</span>
-   <img src="images/jne.png" alt="JNE" width="50" height="auto">
-   <img src="images/jnt.png" alt="JNT" width="50" height="auto">
-   <img src="images/tiki.png" alt="TIKI" width="50" height="auto">
+   <img src="image/jne.jpg" alt="JNE" width="50" height="auto">
+   <img src="image/jnt.jpg" alt="JNT" width="50" height="auto">
+   <img src="image/tiki.jpg" alt="TIKI" width="50" height="auto">
 </div>
           </div>
           <div class="col-md-6 text-end">
-            <p>© Copyright 2024 Kallos Moment. All rights reserved.</p>
+            <p>Copyright © 2024 Kallos Moment. All rights reserved.</p>
           </div>
         </div>
       </div>
