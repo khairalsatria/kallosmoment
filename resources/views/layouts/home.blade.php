@@ -281,7 +281,7 @@
         <div class="container">
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
             <h4 class="text-uppercase">OUR PACKAGES</h4>
-            <a href="/user.pemesanan" class="btn-link">Booking</a>
+            <a href="/user.pemesanan" class="btn-link">Booking Now</a>
           </div>
           <div class="swiper product-swiper open-up" data-aos="zoom-out">
             <div class="swiper-wrapper d-flex">

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Majestic Admin</title>
+  <title>Dashboard</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -131,7 +131,17 @@
           <li class="nav-item">
             <a class="nav-link" href="pages/tables/basic-table.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Jadwal Kerja</span>
+            </a>
+          </li><li class="nav-item">
+            <a class="nav-link" href="pages/tables/basic-table.html">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Keuangan</span>
+            </a>
+          </li><li class="nav-item">
+            <a class="nav-link" href="/kategori">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Kategori Paket</span>
             </a>
           </li>
 

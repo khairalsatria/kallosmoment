@@ -13,10 +13,11 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
-Route::get('/layouts.dashboard',[DashboardController::class,'index']);
+
 Route::get('/layouts.home',[HomeController::class,'index']);
-Route::get('/gallery',[GalleryController::class,'index']);
-Route::get('/kategori', [KategoriController::class, 'index']);
+// Route::get('/gallery',[GalleryController::class,'index']);
+Route::get('/admin.kategori.index', [KategoriController::class, 'index']);
+Route::get('/admin.dashboard',[DashboardController::class,'index']);
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
