@@ -73,12 +73,6 @@
                           <use xlink:href="#heart"></use>
                         </svg>
                       </a>
-                      {{-- <div class="product-content">
-                        <h5 class="element-title text-uppercase fs-5 mt-3">
-                          <a href="index.html">Dark florish onepiece</a>
-                        </h5>
-                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
-                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -93,12 +87,6 @@
                           <use xlink:href="#heart"></use>
                         </svg>
                       </a>
-                      {{-- <div class="product-content">
-                        <h5 class="text-uppercase fs-5 mt-3">
-                          <a href="index.html">Baggy Shirt</a>
-                        </h5>
-                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$55.00</span></a>
-                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -113,12 +101,6 @@
                           <use xlink:href="#heart"></use>
                         </svg>
                       </a>
-                      {{-- <div class="product-content">
-                        <h5 class="text-uppercase fs-5 mt-3">
-                          <a href="index.html">Cotton off-white shirt</a>
-                        </h5>
-                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$65.00</span></a>
-                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -133,12 +115,6 @@
                           <use xlink:href="#heart"></use>
                         </svg>
                       </a>
-                      {{-- <div class="product-content">
-                        <h5 class="text-uppercase fs-5 mt-3">
-                          <a href="index.html">Crop sweater</a>
-                        </h5>
-                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$50.00</span></a>
-                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -153,12 +129,6 @@
                           <use xlink:href="#heart"></use>
                         </svg>
                       </a>
-                      {{-- <div class="product-content">
-                        <h5 class="text-uppercase fs-5 mt-3">
-                          <a href="index.html">Crop sweater</a>
-                        </h5>
-                        <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                      </div> --}}
                     </div>
                   </div>
                 </div>
@@ -173,12 +143,6 @@
                             <use xlink:href="#heart"></use>
                           </svg>
                         </a>
-                        {{-- <div class="product-content">
-                          <h5 class="text-uppercase fs-5 mt-3">
-                            <a href="index.html">Crop sweater</a>
-                          </h5>
-                          <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -193,12 +157,6 @@
                             <use xlink:href="#heart"></use>
                           </svg>
                         </a>
-                        {{-- <div class="product-content">
-                          <h5 class="text-uppercase fs-5 mt-3">
-                            <a href="index.html">Crop sweater</a>
-                          </h5>
-                          <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -213,12 +171,6 @@
                             <use xlink:href="#heart"></use>
                           </svg>
                         </a>
-                        {{-- <div class="product-content">
-                          <h5 class="text-uppercase fs-5 mt-3">
-                            <a href="index.html">Crop sweater</a>
-                          </h5>
-                          <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -233,12 +185,6 @@
                             <use xlink:href="#heart"></use>
                           </svg>
                         </a>
-                        {{-- <div class="product-content">
-                          <h5 class="text-uppercase fs-5 mt-3">
-                            <a href="index.html">Crop sweater</a>
-                          </h5>
-                          <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -253,12 +199,6 @@
                             <use xlink:href="#heart"></use>
                           </svg>
                         </a>
-                        {{-- <div class="product-content">
-                          <h5 class="text-uppercase fs-5 mt-3">
-                            <a href="index.html">Crop sweater</a>
-                          </h5>
-                          <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                        </div> --}}
                       </div>
                     </div>
                   </div>
@@ -277,7 +217,7 @@
 
 
 
-      <section id="packages" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
+    <section id="packages" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
         <div class="container">
           <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
             <h4 class="text-uppercase">OUR PACKAGES</h4>
@@ -428,7 +368,7 @@
                 </p>
               </div>
             </div>
-      </section>
+    </section>
 
 
 <br>

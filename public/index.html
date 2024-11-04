@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Contact Form</title>
+</head>
+<body>
+
+<div class="content">
+    <div class="container">
+        <div class="row align-items-stretch no-gutters">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/map.jpg" class="card-img-top" alt="Event Image" style="height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Get Started</h3>
+                        <form class="mb-5" method="post" id="contactForm" name="contactForm" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="name" class="col-form-label">Name *</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="email" class="col-form-label">Email *</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your email" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="nohp" class="col-form-label">No Handphone *</label>
+                                    <input type="text" class="form-control" name="nohp" id="nohp" placeholder="Your phone number" required>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="event-date" class="col-form-label">Tanggal Event *</label>
+                                    <input type="date" class="form-control" name="event-date" id="event-date" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="package" class="col-form-label">Kategori Paket *</label>
+                                    <select class="custom-select" id="package" name="package" required>
+                                        <option selected disabled>Choose...</option>
+                                        <option value="Basic Package">Basic Package</option>
+                                        <option value="Standard Package">Standard Package</option>
+                                        <option value="Premium Package">Premium Package</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                  <label for="payment-proof" class="col-form-label">Upload Bukti Pembayaran *</label>
+                                    <input type="file" class="form-control" name="payment-proof" id="payment-proof" accept="image/*" required>
+                                
+                                    </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 form-group mb-3">
+                                  <label for="address" class="col-form-label">Alamat *</label>
+                                  <textarea class="form-control" name="address" id="address" cols="30" rows="4" placeholder="Your address" required></textarea>
+                                  
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 form-group text-center">
+                              <input type="submit" value="Send Message" class="btn btn-submit">
+                              <span class="submitting"></span>
+                              <a href="javascript:history.back()" class="btn btn-kembali">Kembali</a>
+                          </div>
+                            
+                        </form>
+
+                        <div id="form-message-warning mt-4"></div> 
+                        <div id="form-message-success">
+                            Your message was sent, thank you!
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,154 +1,130 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>FormWizard_v1</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="colorlib.com">
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Kallos Moment</title>
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- plugin css for this page -->
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="../../css/style.css">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="image/white-kallos.png" />
+<style>
+.card-margin {
+            margin-top: 20px; /* Adjust the value as needed */
+        }
+</style>
 
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+      </head>
 
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css2/style.css">
-	</head>
-	<body>
-		<div class="wrapper">
-            <form action="" id="wizard">
-        		<!-- SECTION 1 -->
-                <h2></h2>
-                <section>
-                    <div class="inner">
-						<div class="image-holder">
-							<img src="image/gallery/gallery24.jpg" alt="">
-						</div>
-						<div class="form-content" >
-							<div class="form-header">
-								<h3>Registration</h3>
-							</div>
-							<p>Please fill with your details</p>
-							<div class="form-row">
-								<div class="form-holder">
-									<input type="text" placeholder="First Name" class="form-control">
-								</div>
-								<div class="form-holder">
-									<input type="text" placeholder="Last Name" class="form-control">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-holder">
-									<input type="text" placeholder="Your Email" class="form-control">
-								</div>
-								<div class="form-holder">
-									<input type="text" placeholder="Phone Number" class="form-control">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-holder">
-									<input type="text" placeholder="Age" class="form-control">
-								</div>
-								<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
-									<div class="checkbox-tick">
-										<label class="male">
-											<input type="radio" name="gender" value="male" checked> Male<br>
-											<span class="checkmark"></span>
-										</label>
-										<label class="female">
-											<input type="radio" name="gender" value="female"> Female<br>
-											<span class="checkmark"></span>
-										</label>
-									</div>
-								</div>
-							</div>
-							<div class="checkbox-circle">
-								<label>
-									<input type="checkbox" checked> Nor again is there anyone who loves or pursues or desires to obtaini.
-									<span class="checkmark"></span>
-								</label>
-							</div>
-						</div>
-					</div>
-                </section>
+<body>
 
-				<!-- SECTION 2 -->
-                <h2></h2>
-                <section>
-                    <div class="inner">
-						<div class="image-holder">
-							<img src="image/gallery/gallery25.jpg" alt="">
-						</div>
-						<div class="form-content">
-							<div class="form-header">
-								<h3>Registration</h3>
-							</div>
-							<p>Please fill with additional info</p>
-							<div class="form-row">
-								<div class="form-holder w-100">
-									<input type="text" placeholder="Address" class="form-control">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-holder">
-									<input type="text" placeholder="City" class="form-control">
-								</div>
-								<div class="form-holder">
-									<input type="text" placeholder="Zip Code" class="form-control">
-								</div>
-							</div>
+<div class="content">
+    <div class="container">
+        <div class="row align-items-stretch no-gutters">
+            <div class="col-md-6 grid-margin stretch-card mt-4">
+                <div class="card">
+                    <img src="image/gallery/gallery25.jpg" class="card-img-top" alt="Event Image" style="height: 100%; object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-md-6 grid-margin stretch-card mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Booking</h4>
+                        <form method="post" id="contactForm" name="contactForm" enctype="multipart/form-data" class="forms-sample">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="name" class="col-form-label">Name</label>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" placeholder="Your name" value="{{ old('name') }}" required>
+                                    @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="email" class="col-form-label">Email</label>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" placeholder="Your email" value="{{ old('email') }}" required>
+                                    @error('email')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
 
-							<div class="form-row">
-								<div class="select">
-									<div class="form-holder">
-										<div class="select-control">Your country</div>
-										<i class="zmdi zmdi-caret-down"></i>
-									</div>
-									<ul class="dropdown">
-										<li rel="United States">United States</li>
-										<li rel="United Kingdom">United Kingdom</li>
-										<li rel="Viet Nam">Viet Nam</li>
-									</ul>
-								</div>
-								<div class="form-holder"></div>
-							</div>
-						</div>
-					</div>
-                </section>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="nohp" class="col-form-label">No Handphone</label>
+                                    <input type="text" class="form-control @error('nohp') is-invalid @enderror" name="nohp" id="nohp" placeholder="Your phone number" value="{{ old('nohp') }}" required>
+                                    @error('nohp')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="event-date" class="col-form-label">Tanggal Event</label>
+                                    <input type="date" class="form-control @error('event-date') is-invalid @enderror" name="event-date" id="event-date" value="{{ old('event-date') }}" required>
+                                    @error('event-date')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
 
-                <!-- SECTION 3 -->
-                <h2></h2>
-                <section>
-                    <div class="inner">
-						<div class="image-holder">
-							<img src="image/gallery/gallery00.jpg" alt="">
-						</div>
-						<div class="form-content">
-							<div class="form-header">
-								<h3>Registration</h3>
-							</div>
-							<p>Send an optional message</p>
-							<div class="form-row">
-								<div class="form-holder w-100">
-									<textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>
-								</div>
-							</div>
-							<div class="checkbox-circle mt-24">
-								<label>
-									<input type="checkbox" checked>  Please accept <a href="#">terms and conditions ?</a>
-									<span class="checkmark"></span>
-								</label>
-							</div>
-						</div>
-					</div>
-                </section>
-            </form>
-		</div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="package" class="col-form-label">Kategori Paket</label>
+                                    <select class="custom-select @error('package') is-invalid @enderror" id="package" name="package" required>
+                                        <option selected disabled>Choose...</option>
+                                        <option value="Basic Package" {{ old('package') == 'Basic Package' ? 'selected' : '' }}>Basic Package</option>
+                                        <option value="Standard Package" {{ old('package') == 'Standard Package' ? 'selected' : '' }}>Standard Package</option>
+                                        <option value="Premium Package" {{ old('package') == 'Premium Package' ? 'selected' : '' }}>Premium Package</option>
+                                    </select>
+                                    @error('package')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label for="payment-proof" class="col-form-label">Upload Bukti Pembayaran</label>
+                                    <input type="file" class="form-control @error('payment-proof') is-invalid @enderror" name="payment-proof" id="payment-proof" accept="image/*" required>
+                                    @error('payment-proof')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
 
-		<!-- JQUERY -->
-		<script src="js2/jquery-3.3.1.min.js"></script>
+                            <div class="row">
+                                <div class="col-md-12 form-group mb5">
+                                    <label for="address" class="col-form-label">Alamat</label>
+                                    <textarea class="form-control @error('address') is-invalid @enderror" name="address" id="address" cols="30" rows="4" placeholder="Your address" required>{{ old('address') }}</textarea>
+                                    @error('address')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
 
-		<!-- JQUERY STEP -->
-		<script src="js2/jquery.steps.js"></script>
-		<script src="js2/main.js"></script>
-		<!-- Template created and distributed by Colorlib -->
+                            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                            <a href="/layouts.home" class="btn btn-light">Kembali</a>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../js/file-upload.js"></script>
+
 </body>
 </html>

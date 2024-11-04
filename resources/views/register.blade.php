@@ -5,9 +5,9 @@
     <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="image/white-kallos.png"/>
     <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../css1/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="../../vendors/mdi/css/materialdesignicons.min.css">
 </head>
 
@@ -92,7 +92,7 @@
 
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js1/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

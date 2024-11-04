@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class KategoriController extends Controller
 {
@@ -12,8 +13,14 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategoris = Kategori::latest()->paginate(10);
+        $kategoris = Kategori::orderBy('kode_kategori')->paginate(10);
         return view('admin.kategori.index', ['kategoris' => $kategoris]);
+    }
+
+    public function cetakPdf()
+    {
+        $pdf = PDF::loadView('admin.kategori.cetakpdf', ['kategoris' => Kategori::all()]);
+        return $pdf->stream('Laporan-Data-Kategori.pdf');
     }
 
     /**
@@ -35,7 +42,7 @@ class KategoriController extends Controller
             'harga' => 'required|numeric|min:0',
         ]);
         Kategori::create($validated);
-        return redirect('kategori')->with('pesan', 'Data berhasil ditambahkan');
+        return redirect('admin-kategori')->with('pesan', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -67,7 +74,7 @@ class KategoriController extends Controller
             'harga' => 'required|numeric|min:0',
         ]);
         Kategori::where('id', $id)->update($validated);
-        return redirect('kategori')->with('pesan', 'Data berhasil diubah');
+        return redirect('admin-kategori')->with('pesan', 'Data berhasil diubah');
     }
 
     /**
@@ -76,7 +83,8 @@ class KategoriController extends Controller
     public function destroy(string $id)
     {
         Kategori::destroy($id);
-        return redirect('kategori')->with('pesan', 'Data berhasil dihapus');
+        return redirect('admin-kategori')->with('pesan', 'Data berhasil dihapus');
     }
-}
 
+
+}

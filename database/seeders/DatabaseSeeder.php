@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Kategori;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,37 +16,64 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Contoh data untuk tabel kategoris
-        $data = [
-            [
-                'kode_kategori' => 'KAT001',
-                'nama_kategori' => 'Kategori 1',
-                'harga' => 10000,
-            ],
-            [
-                'kode_kategori' => 'KAT002',
-                'nama_kategori' => 'Kategori 2',
-                'harga' => 20000,
-            ],
-            [
-                'kode_kategori' => 'KAT003',
-                'nama_kategori' => 'Kategori 3',
-                'harga' => 30000,
-            ],
-            [
-                'kode_kategori' => 'KAT004',
-                'nama_kategori' => 'Kategori 4',
-                'harga' => 40000,
-            ],
-            [
-                'kode_kategori' => 'KAT005',
-                'nama_kategori' => 'Kategori 5',
-                'harga' => 50000,
-            ],
-        ];
+        // $data = [
+        //     [
+        //         'kode_kategori' => 'KAT001',
+        //         'nama_kategori' => 'Kategori 1',
+        //         'harga' => 10000,
+        //     ],
+        //     [
+        //         'kode_kategori' => 'KAT002',
+        //         'nama_kategori' => 'Kategori 2',
+        //         'harga' => 20000,
+        //     ],
+        //     [
+        //         'kode_kategori' => 'KAT003',
+        //         'nama_kategori' => 'Kategori 3',
+        //         'harga' => 30000,
+        //     ],
+        //     [
+        //         'kode_kategori' => 'KAT004',
+        //         'nama_kategori' => 'Kategori 4',
+        //         'harga' => 40000,
+        //     ],
+        //     [
+        //         'kode_kategori' => 'KAT005',
+        //         'nama_kategori' => 'Kategori 5',
+        //         'harga' => 50000,
+        //     ],
+        // ];
 
-        // Insert data ke dalam tabel
-        foreach ($data as $kategori) {
-            Kategori::create($kategori);
-        }
+        // // Insert data ke dalam tabel
+        // foreach ($data as $kategori) {
+        //     Kategori::create($kategori);
+        // };
+
+        Kategori::create([
+            'kode_kategori' => 'KAT001',
+            'nama_kategori' => 'Kategori 1',
+            'harga' => 50000,
+        ]);
+        Kategori::create([
+            'kode_kategori' => 'KAT002',
+            'nama_kategori' => 'Kategori 2',
+            'harga' => 50000,
+        ]);
+        Kategori::create([
+            'kode_kategori' => 'KAT003',
+            'nama_kategori' => 'Kategori 3',
+            'harga' => 50000,
+        ]);
+        Kategori::create([
+            'kode_kategori' => 'KAT004',
+            'nama_kategori' => 'Kategori 4',
+            'harga' => 50000,
+        ]);
+        Kategori::create([
+            'kode_kategori' => 'KAT005',
+            'nama_kategori' => 'Kategori 5',
+            'harga' => 50000,
+        ]);
+        User::factory(10)->create();
     }
 }
