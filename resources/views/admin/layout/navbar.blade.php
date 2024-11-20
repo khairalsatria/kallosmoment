@@ -4,7 +4,7 @@
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
               <div class="navbar-brand-wrapper d-flex justify-content-center">
           <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-            <a class="navbar-brand brand-logo" href="index.html"><img src="image/kallosmoment.png" alt="logo"/></a>
+            <a class="navbar-brand brand-logo" href="index.html"><img src="../../image/logo-datar.png" alt="logo"/></a>
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
               <span class="mdi mdi-sort-variant"></span>
@@ -85,7 +85,7 @@
                         <i class="mdi mdi-settings text-primary mr-2"></i>
                         <span>Settings</span>
                     </a>
-                    <a class="dropdown-item d-flex align-items-center" href="/layouts.home">
+                    <a class="dropdown-item d-flex align-items-center" href="/kallos-moments">
                         <i class="mdi mdi-logout text-danger mr-2"></i>
                         <span>Logout</span>
                     </a>

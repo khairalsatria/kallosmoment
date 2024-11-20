@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('admin.layout.main')
 
  @section('content')
 
@@ -40,10 +40,25 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <script>
+                                        function addFormat(input) {
+                                            let value = input.value.replace(/[^0-9]/g, ''); // Menghapus karakter non-numeric
+                                            if (value) {
+                                                input.value = 'Rp' + new Intl.NumberFormat('id-ID', { style: 'decimal', minimumFractionDigits: 2 }).format(value);
+                                            } else {
+                                                input.value = '';
+                                            }
+                                        }
+
+                                        function removeFormat(input) {
+                                            let value = input.value.replace(/[Rp. ]/g, ''); // Menghapus 'Rp', '.' dan spasi
+                                            input.value = value;
+                                        }
+                                    </script>
 
 
                                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
-                                    <a href="{{ route('admin-kategori.index') }}" class="btn btn-light">Kembali</a>
+                                    <a href="{{ route('admin-kategori.index') }}" class="btn btn-secondary">Kembali</a>
                                 </form>
                             </div>
                         </div>

@@ -30,4 +30,6 @@ class Kategori extends Model
     {
         return $query->where('harga', '<', $price);
     }
+
+    
 }

@@ -9,46 +9,53 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Detail Kategori</h4>
+                        <h4 class="card-title">Detail Jadwal Kerja</h4>
                         <p class="card-description">
-                            Menampilkan detail kategori paket wedding photography Kallos Moment
+                            Menampilkan detail jadwal kerja event photography Kallos Moment
                         </p>
-                        {{-- <div class="mb-4">
-                            <a href="{{ route('admin-kategori.index') }}" class="btn btn-primary">Kembali ke Daftar Kategori</a>
-                        </div> --}}
+
                         <div class="d-flex justify-content-end mt-4 mb-3">
-                            <a href="/admin-kategori/{{ $kategori->id }}/edit" class="btn btn-warning mr-2">
+                            <a href="/admin-jadwal_kerja/{{ $jadwalKerja->id }}/edit" class="btn btn-warning mr-2">
                                 <i class="mdi mdi-grease-pencil"></i>
                             </a>
-                            <form action="/admin-kategori/{{ $kategori->id }}" method="post" class="d-inline">
+                            <form action="/admin-jadwal_kerja/{{ $jadwalKerja->id }}" method="post" class="d-inline">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger mr-2" onclick="return confirm('Yakin akan menghapus data ini?')">
                                     <i class="mdi mdi-delete"></i>
                                 </button>
                             </form>
-                            <a href="{{ route('admin-kategori.index') }}" class="btn btn-secondary">
+                            <a href="{{ route('admin-jadwal_kerja.index') }}" class="btn btn-secondary">
                                 <i class="mdi mdi-exit-to-app"></i>
                             </a>
                         </div>
+
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <th>Kode Kategori</th>
-                                        <td>{{ $kategori->kode_kategori }}</td>
+                                        <th>Nama Klien</th>
+                                        <td>{{ $jadwalKerja->nama_klien }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Nama Kategori</th>
-                                        <td>{{ $kategori->nama_kategori }}</td>
+                                        <th>Kategori Paket</th>
+                                        <td>{{ $jadwalKerja->nama_kategori }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Harga</th>
-                                        <td>Rp{{ number_format($kategori->harga, 0, ',', '.') }},00</td>
+                                        <th>Tanggal Event</th>
+                                        <td>{{ \Carbon\Carbon::parse($jadwalKerja->tanggal_event)->format('d-m-Y') }}</td>
                                     </tr>
                                     <tr>
-                                        <th>Deskripsi</th>
-                                        <td>{{ $kategori->deskripsi ?? 'Tidak ada deskripsi' }}</td> <!-- Assuming there's a description field -->
+                                        <th>Alamat Event</th>
+                                        <td>{{ $jadwalKerja->alamat_event }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Catatan</th>
+                                        <td>{{ $jadwalKerja->catatan ?? 'Tidak ada catatan' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td>{{ $jadwalKerja->status }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -59,8 +66,4 @@
             </div>
         </div>
     </div>
-
 @endsection
-
-
-

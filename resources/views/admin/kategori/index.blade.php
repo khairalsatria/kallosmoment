@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('admin.layout.main')
 {{-- @section('title','Data Kategori')
 @section('navKategori','active') --}}
 
@@ -18,8 +18,8 @@
                         </p>
                         @can('admin')
                         <div class="d-flex justify-content-end mb-3">
-                            <button onclick="window.print('cetakpdf/kategori');" class="mdi mdi-download menu-icon btn btn-secondary"></button>
-                            <a href="{{ route('admin-kategori.create') }}" class="mdi mdi-plus-circle menu-icon btn btn-primary ml-2"></a>
+                            <button onclick="window.print('cetakpdf/kategori');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
+                            <a href="{{ route('admin-kategori.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Add Data</a>
                         </div>
                         @endcan
                         <div class="table-responsive">

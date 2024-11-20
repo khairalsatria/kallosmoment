@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('admin.layout.main')
 
 @section('content')
 
@@ -38,8 +38,8 @@
                                         @enderror
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary mr-2">Update</button>
-                                    <a href="{{ route('admin-kategori.index') }}" class="btn btn-light">Kembali</a>
+                                    <button type="submit" class="btn btn-primary mr-2">Edit</button>
+                                    <a href="{{ route('admin-kategori.index') }}" class="btn btn-secondary">Kembali</a>
                                 </form>
                             </div>
                         </div>
