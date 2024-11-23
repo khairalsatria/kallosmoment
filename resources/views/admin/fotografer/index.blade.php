@@ -34,7 +34,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($users as $user)
-                                    @if($user->role === 'Fotografer')<!-- Only show users with role 'pelanggan' -->
+                                    @if($user->role === 'fotografer')<!-- Only show users with role 'pelanggan' -->
                                             <tr>
                                                 <td>{{ $users->firstItem() + $loop->index }}</td>
                                                 <td>{{ $user->name }}</td>

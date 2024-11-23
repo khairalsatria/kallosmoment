@@ -63,16 +63,18 @@ class PemesananController extends Controller
         return redirect()->route('pemesanan.riwayat')->with('success', 'Bukti pembayaran berhasil diupload.');
     }
 
-    public function riwayat()
-    {
-        // Ambil email pengguna yang sedang login
-        $email = Auth::user()->email;
 
-        // Ambil semua pemesanan berdasarkan email pengguna
-        $riwayat = Pemesanan::where('email', $email)->get();
 
-        return view('pemesanan.riwayat', compact('riwayat'));
-    }
+public function riwayat()
+{
+    // Ambil email pengguna yang sedang login
+    $email = Auth::user()->email;
+
+    // Ambil semua pemesanan berdasarkan email pengguna
+    $riwayat = Pemesanan::where('email', $email)->get();
+
+    return view('pemesanan.riwayat', compact('riwayat'));
+}
 
     public function info($id) {
         $pemesanan = Pemesanan::findOrFail($id);

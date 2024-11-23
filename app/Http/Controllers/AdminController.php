@@ -15,7 +15,7 @@ class AdminController extends Controller
     return view('admin.pemesanan.index', compact('pemesanans'));
 }
 
-public function konfirmasi($id)
+    public function konfirmasi($id)
 {
     $pemesanan = Pemesanan::findOrFail($id);
     $pemesanan->status_pemesanan = 'dp lunas'; // Ubah status menjadi 'dp lunas'
@@ -31,44 +31,46 @@ public function konfirmasi($id)
     ]);
 
     Keuangan::create([
-        'tanggal' => $pemesanan->tanggal_event, // Atau gunakan tanggal yang sesuai
+        'tanggal' => now(), // Menggunakan tanggal dan waktu saat ini
         'deskripsi' => 'DP untuk pemesanan a/n ' . $pemesanan->nama,
         'kategori' => $pemesanan->nama_kategori,
         'pendapatan' => $pemesanan->harga * 0.5, // Asumsikan ada kolom 'dp' di model Pemesanan
-        'pengeluaran' => 0,// Atau hitung saldo sesuai kebutuhan
+        'pengeluaran' => 0, // Atau hitung saldo sesuai kebutuhan
     ]);
 
     return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil dikonfirmasi.');
-}
+    }
 
-public function done($id)
-{
+    public function done($id)
+    {
     $pemesanan = Pemesanan::findOrFail($id);
     $pemesanan->status_pemesanan = 'done'; // Ubah status menjadi 'done'
     $pemesanan->save();
 
     // Update status pada jadwal kerja yang terkait
-    $jadwalKerja = JadwalKerja::where('nama_klien', $pemesanan->nama)
-        ->where('tanggal_event', $pemesanan->tanggal_event)
-        ->first();
+    // $jadwalKerja = JadwalKerja::where('nama_klien', $pemesanan->nama)
+    //     ->where('tanggal_event', $pemesanan->tanggal_event)
+    //     ->first();
 
-    if ($jadwalKerja) {
-        $jadwalKerja->status = 'done'; // Ubah status menjadi 'done'
-        $jadwalKerja->save();
-    }
+    // if ($jadwalKerja) {
+    //     $jadwalKerja->status = 'done'; // Ubah status menjadi 'done'
+    //     $jadwalKerja->save();
+    // }
 
-    // Update data keuangan untuk mengubah pendapatan dari DP menjadi harga
-    $keuangan = Keuangan::where('deskripsi', 'Pembayaran lunas untuk pemesanan a/n ' . $pemesanan->nama)
+    // Update entri keuangan yang terkait dengan pemesanan
+    $keuangan = Keuangan::where('deskripsi', 'DP untuk pemesanan a/n ' . $pemesanan->nama)
         ->where('kategori', $pemesanan->nama_kategori)
         ->first();
 
     if ($keuangan) {
-        $keuangan->pendapatan = $pemesanan->harga; // Ubah pendapatan menjadi harga
+        $keuangan->deskripsi = 'Pembayaran lunas untuk pemesanan a/n ' . $pemesanan->nama . ''; // Ubah deskripsi
+        $keuangan->tanggal = now();  // Menggunakan tanggal dan waktu saat ini
+        $keuangan->pendapatan = $pemesanan->harga; // Ubah pendapatan menjadi harga penuh
         $keuangan->save();
     }
 
     return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil diselesaikan.');
-    }
+}
     public function hapus($id)
     {
         $pemesanan = Pemesanan::findOrFail($id);

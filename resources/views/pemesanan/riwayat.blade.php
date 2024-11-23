@@ -41,3 +41,26 @@
 
 @endsection
 
+@push('styles')
+<style>
+    .post-item {
+        border: 1px solid #e0e0e0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transition: transform 0.2s;
+    }
+    .post-item:hover {
+        transform: scale(1.02);
+    }
+    .post-title a {
+        text-decoration: none;
+        color: #333;
+    }
+    .post-title a:hover {
+        color: #007bff; /* Change to your preferred hover color */
+    }
+    .badge {
+        font-size: 0.9rem; /* Slightly smaller badge font */
+    }
+</style>
+@endpush

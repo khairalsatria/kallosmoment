@@ -1,14 +1,10 @@
 @extends('admin.layout.main')
-{{-- @section('title','Data Keuangan')
-@section('navKeuangan','active') --}}
 
 @section('content')
 
-<!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
-
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -27,8 +23,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Tanggal</th>
                                         <th>Deskripsi</th>
+                                        <th>Tanggal</th>
                                         <th>Kategori</th>
                                         <th>Pendapatan</th>
                                         <th>Pengeluaran</th>
@@ -51,12 +47,12 @@
                                     @endphp
                                     <tr>
                                         <td>{{ $keuangans->firstItem() + $loop->index }}</td>
-                                        <td>{{ \Carbon\Carbon::parse($keuangan->tanggal)->format('d-m-Y') }}</td>
                                         <td>{{ $keuangan->deskripsi }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($keuangan->tanggal)->format('d-m-Y') }}</td>
                                         <td>{{ $keuangan->kategori }}</td>
-                                        <td>Rp{{ number_format($keuangan->pendapatan ?? 0, 0, ',', '.') }},00</td> <!-- Format pendapatan -->
-                                        <td>Rp{{ number_format($keuangan->pengeluaran ?? 0, 0, ',', '.') }},00</td> <!-- Format pengeluaran -->
-                                        <td>Rp{{ number_format($totalPendapatan - $totalPengeluaran, 0, ',', '.') }},00</td> <!-- Format saldo total -->
+                                        <td>Rp{{ number_format($keuangan->pendapatan ?? 0, 0, ',', '.') }},00</td>
+                                        <td>Rp{{ number_format($keuangan->pengeluaran ?? 0, 0, ',', '.') }},00</td>
+                                        <td>Rp{{ number_format($totalPendapatan - $totalPengeluaran, 0, ',', '.') }},00</td>
                                         @can('admin')
                                         <td class="text-nowrap">
                                             <a href="/admin-keuangan/{{ $keuangan->id }}" title="Lihat Detail" class="btn btn-success btn-sm"><i class="mdi mdi-eye"></i></a>
@@ -73,11 +69,32 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <!-- Menampilkan saldo akhir -->
+                        <div class="d-flex justify-content-end mt-4">
+                            <h6>Sisa Keuangan:
+                                @php
+                                    $saldo = $totalPendapatan - $totalPengeluaran;
+                                    $badgeClass = 'primary'; // Default badge color
+
+                                    if ($saldo > 0) {
+                                        $badgeClass = 'dark'; // Saldo positif
+                                    } elseif ($saldo < 0) {
+                                        $badgeClass = 'danger'; // Saldo negatif
+                                    } else {
+                                        $badgeClass = 'secondary'; // Saldo nol
+                                    }
+                                @endphp
+                                <label class="badge badge-{{ $badgeClass }}">
+                                    Rp{{ number_format($saldo, 0, ',', '.') }},00
+                                </label>
+                            </h5>
+                        </div>
+
                         {{ $keuangans->links() }} <!-- Add pagination links if needed -->
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

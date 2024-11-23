@@ -13,8 +13,9 @@ class KeuanganController extends Controller
      */
     public function index()
     {
-        $keuangans = Keuangan::orderBy('tanggal', 'desc')->paginate(10);
-        return view('admin.keuangan.index', ['keuangans' => $keuangans]);
+        // Mengambil data keuangan dan mengurutkannya berdasarkan tanggal
+        $keuangans = Keuangan::orderBy('tanggal', 'asc')->paginate(10);
+        return view('admin.keuangan.index', compact('keuangans'));
     }
 
     public function cetakPdf()

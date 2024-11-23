@@ -44,8 +44,21 @@
                                         <td>{{ \Carbon\Carbon::parse($jadwalKerja->tanggal_event)->format('d-m-Y') }}</td>
                                         <td>{{ $jadwalKerja->alamat_event }}</td>
                                         <td>
-                                            <label class="badge badge-{{  ($jadwalKerja->status == 'soon' ? 'warning' : 'success') }}">
-                                                {{ ucfirst($jadwalKerja->status) }}
+                                            @php
+                                                // Misalkan $jadwalKerja->tanggal adalah tanggal yang ingin dibandingkan
+                                                $tanggalSekarang = now(); // Mengambil tanggal dan waktu saat ini
+                                                $tanggal_event = \Carbon\Carbon::parse($jadwalKerja->tanggal_event); // Mengonversi tanggal jadwal ke objek Carbon
+
+                                                // Menentukan status
+                                                if ($tanggalSekarang > $tanggal_event) {
+                                                    $status = 'done';
+                                                } else {
+                                                    $status = $jadwalKerja->status;
+                                                }
+                                            @endphp
+
+                                            <label class="badge badge-{{ ($status == 'soon' ? 'warning' : ($status == 'done' ? 'success' : 'primary')) }}">
+                                                {{ ucfirst($status) }}
                                             </label>
                                         </td>
                                         @can('admin')
@@ -64,6 +77,46 @@
                                 </tbody>
                             </table>
                         </div>
+
+                       <!-- Menampilkan tanggal terdekat -->
+                       @php
+                       // Mencari tanggal terdekat
+                       $tanggalTerdekat = $jadwalKerjas->pluck('tanggal_event')->filter(function($date) {
+                           return \Carbon\Carbon::parse($date) >= now(); // Hanya ambil tanggal yang akan datang
+                       })->min();
+
+                       // Mencari alamat event dari tanggal terdekat
+                       $alamatEvent = null;
+                       if ($tanggalTerdekat) {
+                           $jadwalTerdekat = $jadwalKerjas->firstWhere('tanggal_event', $tanggalTerdekat);
+                           $alamatEvent = $jadwalTerdekat ? $jadwalTerdekat->alamat_event : null;
+                       }
+                   @endphp
+
+                   @if($tanggalTerdekat)
+                   <div class="d-flex justify-content mt-4">
+                       <h5>Next Schedule :
+                           @php
+                               // Menentukan badge class berdasarkan tanggal terdekat
+                               $badgeClass = 'primary'; // Default badge color
+                               $tanggal_event = \Carbon\Carbon::parse($tanggalTerdekat);
+                               $tanggalSekarang = now();
+
+                               if ($tanggal_event->isToday()) {
+                                   $badgeClass = 'danger'; // Jika tanggal terdekat adalah hari ini
+                               } elseif ($tanggal_event->isFuture()) {
+                                   $badgeClass = 'dark'; // Jika tanggal terdekat adalah di masa depan
+                               }
+                           @endphp
+                           <label class="badge badge-{{ $badgeClass }}">
+                               {{ $tanggal_event->format('d-m-Y') }}
+                           </label>
+                           <label class="badge badge-{{ $badgeClass }}">
+                            {{ $alamatEvent }}
+                            </label>
+                       </h5>
+                   </div>
+                   @endif
                         {{ $jadwalKerjas->links() }} <!-- Add pagination links if needed -->
                     </div>
                 </div>

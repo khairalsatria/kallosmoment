@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label for="role">Role</label>
                                 <select class="form-control @error('role') is-invalid @enderror" id="role" name="role">
-                                    <option value="pelanggan" {{ old('role') == 'fotografer' ? 'selected' : '' }}>Fotografer</option>
+                                    <option value="fotografer" {{ old('role') == 'fotografer' ? 'selected' : '' }}>Fotografer</option>
                                     {{-- <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option> --}}
                                     <!-- Tambahkan opsi lain jika perlu -->
                                 </select>
