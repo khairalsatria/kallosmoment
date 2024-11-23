@@ -50,6 +50,18 @@
                                         <th>Deskripsi</th>
                                         <td>{{ $kategori->deskripsi ?? 'Tidak ada deskripsi' }}</td> <!-- Assuming there's a description field -->
                                     </tr>
+                                    <tr>
+                                        <th>Gambar Kategori</th>
+                                        <td>
+                                            @if($kategori->gambar_kategori)
+                                                <a href="{{ asset($kategori->gambar_kategori) }}" target="_blank" class="btn btn-dark"><i class="mdi mdi-images"></i>
+                                                    Lihat Gambar
+                                                </a>
+                                            @else
+                                                Tidak ada gambar
+                                            @endif
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -61,6 +73,3 @@
     </div>
 
 @endsection
-
-
-

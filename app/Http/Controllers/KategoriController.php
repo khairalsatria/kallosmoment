@@ -27,23 +27,35 @@ class KategoriController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('admin.kategori.create');
+{
+    return view('admin.kategori.create');
+}
+
+/**
+ * Store a newly created resource in storage.
+ */
+public function store(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'kode_kategori' => 'required|string|unique:kategoris',
+        'nama_kategori' => 'required|string|max:255',
+        'harga' => 'required|numeric|min:0',
+        'gambar_kategori' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // Validasi gambar kategori
+    ]);
+
+    // Proses upload gambar_kategori jika ada
+    if ($request->hasFile('gambar_kategori')) {
+        // Menyimpan gambar ke dalam folder public/bukti_pembayaran
+        $path = $request->file('gambar_kategori')->store('packages', 'public');
+        $validated['gambar_kategori'] = $path; // Menyimpan path gambar ke dalam array validated
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'kode_kategori' => 'required|string|unique:kategoris',
-            'nama_kategori' => 'required|string|max:255',
-            'harga' => 'required|numeric|min:0',
-        ]);
-        Kategori::create($validated);
-        return redirect('admin-kategori')->with('pesan', 'Data berhasil ditambahkan');
-    }
+    // Membuat kategori baru dengan data yang telah divalidasi
+    Kategori::create($validated);
+
+    return redirect('admin-kategori')->with('pesan', 'Data berhasil ditambahkan');
+}
 
     /**
      * Display the specified resource.
@@ -72,7 +84,15 @@ class KategoriController extends Controller
             'kode_kategori' => 'required|string|max:10',
             'nama_kategori' => 'required|string|max:255',
             'harga' => 'required|numeric|min:0',
+            'gambar_kategori' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
+
+        if ($request->hasFile('gambar_kategori')) {
+            // Menyimpan gambar ke dalam folder public/bukti_pembayaran
+            $path = $request->file('gambar_kategori')->store('packages', 'public');
+            $validated['gambar_kategori'] = $path; // Menyimpan path gambar ke dalam array validated
+        }
+
         Kategori::where('id', $id)->update($validated);
         return redirect('admin-kategori')->with('pesan', 'Data berhasil diubah');
     }

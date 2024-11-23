@@ -13,19 +13,22 @@
     <meta name="description" content="Bootstrap 5 Fashion Store HTML CSS Template">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css1/vendor.css">
+    <link rel="stylesheet" type="text/css" href="/css1/vendor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" type="image/png" href="image/white-kallos.png"/>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="icon" type="/image/png" href="/image/white-kallos.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
       rel="stylesheet">
 
       <style>
-           
 
+.footer {
+    margin-top: auto; /* Mengisi ruang yang tersisa */
+}
         .navbar-nav .nav-link,
         .list-unstyled a {
             transition: font-weight 0.1s ease; /* Animasi transisi untuk perubahan font-weight */
@@ -35,6 +38,181 @@
         .list-unstyled a:hover {
             font-weight: 500; /* Mengubah font menjadi bold saat hover */
         }
+
+
+/* Gaya untuk label form */
+.booking-form .form-label {
+    font-weight: bold; /* Menebalkan label */
+    margin-bottom: 5px; /* Jarak bawah label */
+}
+
+/* Gaya untuk input dan textarea */
+.booking-form .form-control {
+    border-radius: 5px; /* Sudut melengkung */
+    padding: 10px; /* Padding dalam input */
+    font-size: 16px; /* Ukuran font input */
+    border: 1px solid #ccc; /* Border */
+    transition: border-color 0.3s; /* Transisi border */
+}
+
+/* Gaya untuk input ketika fokus */
+.booking-form .form-control:focus {
+    border-color: #007bff; /* Ubah warna border saat fokus */
+    outline: none; /* Hilangkan outline default */
+}
+
+.booking {
+    background-color: #f9f9f9; /* Warna latar belakang */
+    padding: 40px 20px; /* Padding untuk section */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.image-container {
+    display: flex; /* Menggunakan flexbox untuk kontainer gambar */
+    align-items: center; /* Menjaga gambar tetap di tengah secara vertikal */
+    height: 100%; /* Memastikan kontainer gambar mengisi tinggi kolom */
+}
+
+.booking img {
+    width: 100%; /* Mengatur lebar gambar agar sesuai dengan kolom */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    max-height: 100%; /* Memastikan gambar tidak lebih tinggi dari kontainer */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+    border-radius: 0 8px 8px 0; /* Sudut melengkung hanya di sisi gambar */
+}
+
+.detail-pemesanan {
+    background-color: #f9f9f9; /* Warna latar belakang */
+    padding: 40px 20px; /* Padding untuk section */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+}
+
+.detail-pemesanan h4 {
+    color: #555; /* Warna jud ul */
+}
+
+.detail-pemesanan p {
+    color: #666; /* Warna teks untuk deskripsi */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Memastikan gambar mengisi area */
+}
+
+.table {
+    margin-bottom: 0; /* Menghilangkan margin bawah pada tabel */
+}
+
+.btn {
+    margin-top: 20px; /* Menambahkan jarak atas pada tombol */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Warna latar belakang tombol */
+    border-color: #007bff; /* Warna border tombol */
+    color: #fff; /* Warna teks tombol */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Warna latar belakang saat hover */
+    border-color: #0056b3; /* Warna border saat hover */
+}
+
+.btn-dark {
+    background-color: #343a40; /* Warna latar belakang tombol gelap */
+    border-color: #343a40; /* Warna border tombol gelap */
+    color: #fff; /* Warna teks tombol gelap */
+}
+
+.btn-dark:hover {
+    background-color: #23272b; /* Warna latar belakang saat hover untuk tombol gelap */
+    border-color: #1d2124;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+/* Gaya untuk teks yang konsisten di seluruh section */
+.light-font {
+    color: #333; /* Warna teks */
+    /* font-weight: bold; Menebalkan teks */
+}
+
+/* Gaya untuk paragraf */
+.light-font p {
+    color: #666; /* Warna teks untuk deskripsi */
+    font-weight: normal; /* Tidak menebalkan paragraf */
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* public/css/style.css */
+.profile {
+    background-color: #f8f9fa; /* Warna latar belakang lembut */
+}
+
+.card {
+    border-radius: 15px; /* Sudut kartu yang lebih halus */
+}
+
+.card-header {
+    background-color: #ccc; /* Warna latar belakang header kartu */
+    color: white; /* Warna teks header kartu */
+}
+
+.card-footer .btn {
+    margin: 0 10px; /* Spasi antara tombol */
+}
+
+.card-body div {
+    border-bottom: 1px solid #e9ecef; /* Garis pemisah antar informasi */
+    padding: 10px 0; /* Padding untuk elemen */
+}
+
+/* public/css/style.css */
+.riwayat-pemesanan {
+    background-color: #f8f9fa; /* Warna latar belakang lembut */
+}
+
+.card {
+    border-radius: 10px; /* Sudut kartu yang lebih halus */
+}
+.card-footer {
+    background-color: #f1f1f1; /* Warna latar belakang footer kartu */
+}
+
+.badge {
+    font-size: 0.9em; /* Ukuran font badge */
+}
+
+.alert {
+    border-radius: 5px; /* Sudut alert yang lebih halus */
+}
     </style>
 
   </head>
@@ -177,23 +355,23 @@
 
     @include('dashboard.layouts.sidebar') --}}
 
-    <!-- Begin page content -->
+    {{-- <!-- Begin page content -->
     <main class="flex-shrink-0 content">
-        <div class="container">
+        <div class="container"> --}}
                 @yield('content')
-            </div>
-    </main>
+            {{-- </div> --}}
+    {{-- </main> --}}
 
     @include('layouts.footer')
 
-    <script src="js1/jquery.min.js"></script>
-    <script src="js1/plugins.js"></script>
-    <script src="js1/SmoothScroll.js"></script>
+    <script src="/js1/jquery.min.js"></script>
+    <script src="/js1/plugins.js"></script>
+    <script src="/js1/SmoothScroll.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js1/script.min.js"></script>
+    <script src="/js1/script.min.js"></script>
   </body>
 
 </html>

@@ -16,9 +16,11 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::user()->isAdmin == 0) {
+        // Periksa apakah pengguna adalah admin
+        if (Auth::user()->isAdmin == 0) {
             abort(403, 'Forbidden Access');
         }
+
         return $next($request);
     }
 }

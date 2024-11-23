@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
     <div class="container-scroller">
@@ -16,11 +17,11 @@
                 <div class="row flex-grow">
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
-                            <div class="brand-logo">
-                                <img src="image/kallosmoment.png" alt="icon">
+                            <div class="brand-logo text-center">
+                                {{-- <img src="image/kallosmoment.png" alt="icon"> --}}
                             </div>
-                            <h4>Welcome back!</h4>
-                            <h6 class="font-weight-light">Happy to see you again!</h6>
+                            <h4 class="text-center">KALLOS MOMENTS</h4>
+                            <h6 class="font-weight-light text-center text-italic">Login untuk Mengakses Fitur Kami!</h6>
                             <form class="pt-3" method="POST" action="{{ url('/login') }}">
                                 @csrf
                                 <div class="form-group">

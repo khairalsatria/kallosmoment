@@ -16,6 +16,7 @@ class Kategori extends Model
     protected $fillable = [
         'kode_kategori',
         'nama_kategori',
+        'gambar_kategori',
         'harga',
     ];
 
@@ -31,5 +32,5 @@ class Kategori extends Model
         return $query->where('harga', '<', $price);
     }
 
-    
+
 }

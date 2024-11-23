@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_kategori')->unique(); // Menambahkan kolom kode_kategori
             $table->string('nama_kategori'); // Menambahkan kolom nama_kategori
+            $table->string('gambar_kategori'); // Menambahkan kolom nama_kategori
             $table->decimal('harga', 10, 2); // Menambahkan kolom harga dengan tipe decimal
             $table->timestamps();
         });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pemesanan;
 use App\Models\Kategori; // Pastikan Anda memiliki model Kategori
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PemesananController extends Controller
@@ -64,7 +65,17 @@ class PemesananController extends Controller
 
     public function riwayat()
     {
-        $riwayat = Pemesanan::all(); // Ambil semua pemesanan
+        // Ambil email pengguna yang sedang login
+        $email = Auth::user()->email;
+
+        // Ambil semua pemesanan berdasarkan email pengguna
+        $riwayat = Pemesanan::where('email', $email)->get();
+
         return view('pemesanan.riwayat', compact('riwayat'));
+    }
+
+    public function info($id) {
+        $pemesanan = Pemesanan::findOrFail($id);
+        return view('pemesanan.info', compact('pemesanan'));
     }
 }

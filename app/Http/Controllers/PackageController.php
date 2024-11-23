@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class PackageController extends Controller
 {
     public function index()
     {
@@ -17,6 +17,4 @@ class HomeController extends Controller
         return view('home', compact('kategoris'));
 
     }
-
-
 }

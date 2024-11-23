@@ -45,6 +45,8 @@
         padding: 0.5em 0.75em; /* Padding dalam badge */
         border-radius: 0.25rem; /* Membuat sudut badge melengkung */
     }
+
+
 </style>
 
 </head>
@@ -82,6 +84,7 @@
   <script src="../../js/data-table.js"></script>
   <script src="../../js/jquery.dataTables.js"></script>
   <script src="../../js/dataTables.bootstrap4.js"></script>
+  
   <script>
     function addFormat(input) {
         let value = input.value.replace(/[^0-9]/g, ''); // Menghapus karakter non-numeric

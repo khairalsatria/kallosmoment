@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 
 <body>
@@ -19,10 +20,10 @@
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
                             <div class="brand-logo">
-                                <img src="image/kallosmoment.png" alt="icon">
+                                {{-- <img src="image/kallosmoment.png" alt="icon"> --}}
                             </div>
-                            <h4>New here?</h4>
-                            <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
+                            <h4 class="text-center text-bold">KALLOS MOMENTS</h4>
+                            <h6 class="font-weight-light text-center text-italic">Register untuk Membuat Akun Anda!</h6>
                             <form class="pt-3" method="POST" action="{{ url('/register') }}">
                                 @csrf
                                 <div class="form-group">
@@ -45,6 +46,17 @@
                                             </span>
                                         </div>
                                         <input type="email" class="form-control form-control-lg border-left-0" name="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>No. Handphone</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend bg-transparent">
+                                            <span class="input-group-text bg-transparent border-right-0">
+                                                <i class="mdi mdi-cellphone text-primary"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control form-control-lg border-left-0" name="nohp" placeholder="Nohp" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -76,6 +88,7 @@
                                 <div class="text-center mt-4 font-weight-light">
                                     Already have an account? <a href="{{ url('/login') }}" class="text-primary">Login</a>
                                 </div>
+                                <br>
                             </form>
                         </div>
                     </div>

@@ -39,41 +39,28 @@
                 </div>
             </div>
 
-            <div class="col-1 col-lg-auto">
-                <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-2 align-items-center"> <!-- Added align-items-center -->
-                    @if (session('role') == 'pelanggan')
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ Auth::user()->name }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
-                            <a class="dropdown-item" href="{{ route('pemesanan.riwayat') }}">Riwayat Pemesanan</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                        </ul>
-                    </li>
-                    @else
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Account
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('login') }}">Login</a>
-                            <a class="dropdown-item" href="{{ route('register') }}">Register</a>
-                        </ul>
-                    </li>
-                    {{-- <li class="d-none d-lg-block">
-                        <a href="{{ route('login') }}" class="nav-link text-uppercase">Login<span class="wishlist-count"></span></a>
-                    </li>
-                    <li class="d-none d-lg-block">
-                        <a href="{{ route('register') }}" class="nav-link text-uppercase">Registrasi<span class="wishlist-count"></span></a>
-                    </li> --}}
-                    @endif
-                    <li class="search-box">
+            <div class="col-3 col-lg-auto">
+                <ul class="list-unstyled d-flex m-0">
+                    <?php  if ($user->isAdmin == 2) : ?>
+                        <li class="d-none d-lg-block dropdown">
+                            <a href="#" class="text-uppercase mx-2 dropdown-toggle" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="#settings">Settings</a></li>
+                                <li><a class="dropdown-item" href="#order-history">Riwayat Pemesanan</a></li>
+                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    <?php else: ?>
+                        <li class="d-none d-lg-block">
+                            <a href="/login" class="text-uppercase mx-2">Login<span class="wishlist-count"></span></a>
+                        </li>
+                        <li class="d-none d-lg-block">
+                            <a href="/register" class="text-uppercase mx-5">Register<span class="wishlist-count"></span></a>
+                        </li>
+                    <?php endif; ?>
+                    <li class="search-box mx-2">
                         <a href="#search" class="search-button">
                             <svg width="24" height="24" viewBox="0 0 24 24">
                                 <use xlink:href="#search"></use>
@@ -81,10 +68,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-
-
-
             </div>
         </div>
     </div>
@@ -97,7 +80,7 @@
                 <button type="submit" class="search-submit border-0 position-absolute bg-white"
                     style="top: 15px;right: 15px;">
                     <svg class="search" width="24" height="24">
-                        <use xlink :href="#search"></use>
+                        <use xlink:href="#search"></use>
                     </svg>
                 </button>
             </form>

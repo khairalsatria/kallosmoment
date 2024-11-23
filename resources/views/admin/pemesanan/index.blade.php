@@ -27,8 +27,8 @@
                                         <th>DP</th>
                                         <th>Tanggal</th>
                                         <th>Alamat</th>
-                                        <th>Bukti Pembayaran</th>
-                                        <th>Status Pemesanan</th>
+                                        <th>Bukti</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -44,9 +44,9 @@
                                             <td>Rp. {{ number_format($pemesanan->harga * 0.5, 0, ',', '.') }}</td>
                                                                                         <td>{{ $pemesanan->tanggal_event }}</td>
                                             <td>{{ $pemesanan->alamat_event }}</td>
-                                            <td>
+                                            <td class="text-nowrap">
                                                 @if($pemesanan->bukti_pembayaran)
-                                                    <a href="{{ asset('storage/' . $pemesanan->bukti_pembayaran) }}" target="_blank">Lihat Bukti</a>
+                                                    <a href="{{ asset('storage/' . $pemesanan->bukti_pembayaran) }}" target="_blank" class="btn btn-dark btn-sm"><i class="mdi mdi-image"></i>
                                                 @else
                                                     Belum ada bukti
                                                 @endif
@@ -56,7 +56,7 @@
                                                     {{ ucfirst($pemesanan->status_pemesanan) }}
                                                 </label>
                                             </td>
-                                            <td>
+                                            <td class="text-nowrap">
                                                 @if($pemesanan->status_pemesanan == 'pending')
                                                     <form action="{{ route('admin.konfirmasi', $pemesanan->id) }}" method="POST" style="display:inline;">
                                                         @csrf

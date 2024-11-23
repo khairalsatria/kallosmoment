@@ -1,10 +1,7 @@
 @extends('admin.layout.main')
-{{-- @section('title','Data Kategori')
-@section('navKategori','active') --}}
 
 @section('content')
 
-<!-- partial -->
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
@@ -30,6 +27,7 @@
                                         <th data-order="kode_kategori">Kode Kategori</th>
                                         <th>Nama Kategori</th>
                                         <th>Harga</th>
+                                        <th>Gambar</th> <!-- New column for images -->
                                         @can('admin')
                                         <th>Aksi</th>
                                         @endcan
@@ -41,7 +39,16 @@
                                         <td>{{ $kategoris->firstItem() + $loop->index }}</td>
                                         <td>{{ $kategori->kode_kategori }}</td>
                                         <td>{{ $kategori->nama_kategori }}</td>
-                                        <td>Rp{{ number_format($kategori->harga, 0, ',', '.') }},00</td> <!-- Format harga -->
+                                        <td>Rp{{ number_format($kategori->harga, 0, ',', '.') }},00</td>
+                                        <td>
+                                            @if($kategori->gambar_kategori)
+                                                <a href="{{ asset('storage/' . $kategori->gambar_kategori) }}" target="_blank" class="btn btn-dark"><i class="mdi mdi-images"></i>
+                                                    Lihat Gambar
+                                                </a>
+                                            @else
+                                                Tidak ada gambar
+                                            @endif
+                                        </td>
                                         @can('admin')
                                         <td class="text-nowrap">
                                             <a href="/admin-kategori/{{ $kategori->id }}" title="Lihat Detail" class="btn btn-success btn-sm"><i class="mdi mdi-eye"></i></a>
@@ -58,13 +65,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        {{ $kategoris->links() }} <!-- Add pagination links if needed -->
+                        {{ $kategoris->links() }}
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-
-
 @endsection

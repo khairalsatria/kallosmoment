@@ -89,6 +89,7 @@
                         <i class="mdi mdi-logout text-danger mr-2"></i>
                         <span>Logout</span>
                     </a>
+                    @endif
                 </div>
             </li>
 
