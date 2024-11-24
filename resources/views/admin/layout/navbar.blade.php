@@ -81,14 +81,24 @@
                         <small class="text-muted">{{ Auth::check() ? Auth::user()->email : 'guest@example.com' }}</small>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    {{-- <a class="dropdown-item d-flex align-items-center" href="#">
                         <i class="mdi mdi-settings text-primary mr-2"></i>
                         <span>Settings</span>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="/kallos-moments">
+                    </a> --}}
+                    <a class="dropdown-item d-flex align-items-center" href="#" onclick="confirmLogout(event);">
                         <i class="mdi mdi-logout text-danger mr-2"></i>
                         <span>Logout</span>
                     </a>
+
+                    <script>
+                        function confirmLogout(event) {
+                            event.preventDefault(); // Prevent the default action
+                            if (confirm("Apakah Anda yakin ingin keluar?")) {
+                                document.getElementById('logout-form').submit(); // Submit the form if confirmed
+                            }
+                        }
+                    </script>
+
                 </div>
             </li>
 

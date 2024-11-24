@@ -53,10 +53,10 @@
                                         <th>Pengeluaran</th>
                                         <td>Rp{{ number_format($keuangan->pengeluaran ?? 0, 0, ',', '.') }},00</td>
                                     </tr>
-                                    <tr>
+                                    {{-- <tr>
                                         <th>Saldo</th>
                                         <td>Rp{{ number_format(($keuangan->pendapatan ?? 0) - ($keuangan->pengeluaran ?? 0), 0, ',', '.') }},00</td>
-                                    </tr>
+                                    </tr> --}}
                                 </tbody>
                             </table>
                         </div>

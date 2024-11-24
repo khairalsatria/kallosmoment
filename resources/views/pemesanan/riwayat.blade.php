@@ -4,37 +4,44 @@
 
 <section id="riwayat-pemesanan" class="riwayat-pemesanan py-5">
     <div class="container">
-        <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-            <h4 class="text-uppercase">Riwayat Pemesanan Anda</h4>
-            <a href="{{ route('pemesanan.create') }}" class="btn-link">Buat Pemesanan Baru</a>
+        <h4 class="text-uppercase text-center light-font">Riwayat Pemesanan Anda</h4>
+        <div class="text-center mb-4">
+            <a href="{{ route('pemesanan.create') }}" class="btn btn-dark">Buat Pemesanan Baru</a>
         </div>
-        <div class="row">
-            @foreach($riwayat as $index => $pemesanan)
-            <div class="col-md-4 mb-4">
-                <article class="post-item card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="post-title text-uppercase">
-                            <a class="href="{{ route('pemesanan.info', $pemesanan->id) }}">{{ $pemesanan->nama }}</a>
-                        </h5>
-                        <div class="post-meta text-uppercase fs-6 text-secondary">
-                            <span class="post-category">Email   : {{ $pemesanan->email }}</span>
-                            <br>
-                            <span class="post-category">Kategory: {{ $pemesanan->nama_kategori }}</span>
-                            <br>
-                            <span class="post-category">Tanggal : {{ $pemesanan->tanggal_event }}</span>
-                            <br>
-                            <span class="post-category">Alamat  : {{ $pemesanan->alamat_event  }}</span>
-                        </div>
-                        <div class="post-status my-2">
-                            <span class="badge bg-{{ $pemesanan->status_pemesanan == 'pending' ? 'danger' : ($pemesanan->status_pemesanan == 'dp lunas' ? 'warning' : 'success') }}">
-                                {{ ucfirst($pemesanan->status_pemesanan) }}
-                            </span>
-                        </div>
-                        <p class="card-text">Detail pemesanan dapat dilihat dengan mengklik nama di atas.</p>
-                    </div>
-                </article>
+        <div class="row justify-content-center">
+            @if($riwayat->isEmpty())
+            <div class="col-md-8 text-center">
+                <img src="{{ asset('image/belum-pesan.png') }}"
+                     alt="Pemesanan Belum Ada"
+                     class="img-fluid mb-4"
+                     style="width: 225px; height: auto;">
+                <h5 class="text-muted">Pemesanan Anda belum ada.</h5>
             </div>
-            @endforeach
+
+            @else
+                @foreach($riwayat as $index => $pemesanan)
+                <div class="col-md-4 mb-4">
+                    <article class="post-item card shadow-lg border-light rounded position-relative d-flex flex-column">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="post-title text-uppercase font-weight-bold">
+                                <a href="{{ route('pemesanan.info', $pemesanan->id) }}" class="text-dark">{{ $pemesanan->nama }}</a>
+                            </h5>
+                            <div class="post-meta text-uppercase fs-6 text-secondary mt-3">
+                                <p><strong>Package:</strong> {{ $pemesanan->nama_kategori }}</p>
+                                <p><strong>Harga:</strong> Rp {{ number_format($pemesanan->harga, 0, ',', '.') }}</p>
+                                <p><strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($pemesanan->tanggal_event)->format('d M Y') }}</p>
+                                <p><strong>Alamat:</strong> {{ $pemesanan->alamat_event }}</p>
+                            </div>
+                            <div class="post-status position-absolute top-0 end-0 p-3">
+                                <span class="badge bg-{{ $pemesanan->status_pemesanan == 'pending' ? 'danger' : ($pemesanan->status_pemesanan == 'dp lunas' ? 'warning' : 'success') }} px-3 py-2 rounded-pill">
+                                    {{ ucfirst($pemesanan->status_pemesanan) }}
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                @endforeach
+            @endif
         </div>
     </div>
 </section>
@@ -43,24 +50,21 @@
 
 @push('styles')
 <style>
-    .post-item {
-        border: 1px solid #e0e0e0;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        transition: transform 0.2s;
+    .riwayat-pemesanan .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
     }
-    .post-item:hover {
-        transform: scale(1.02);
+
+    .riwayat-pemesanan .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
-    .post-title a {
-        text-decoration: none;
-        color: #333;
+
+    .post-meta p {
+        margin-bottom: 5px;
     }
-    .post-title a:hover {
-        color: #007bff; /* Change to your preferred hover color */
-    }
+
     .badge {
-        font-size: 0.9rem; /* Slightly smaller badge font */
+        font-size: 0.9rem;
     }
 </style>
 @endpush

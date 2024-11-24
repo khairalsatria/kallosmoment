@@ -23,7 +23,7 @@ Route::get('/kallos-moments', function () {
 
 Route::get('/kallos-moments',[HomeController::class,'index']);
 
-Route::get('/admin.layout.dashboard',[DashboardController::class,'index']);
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
 Route::get('/kallos-moments/#packages', [PackageController::class, 'index'])->name('packages.index');
 

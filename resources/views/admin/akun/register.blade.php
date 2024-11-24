@@ -24,6 +24,13 @@
                             </div>
                             <h4 class="text-center text-bold">KALLOS MOMENTS</h4>
                             <h6 class="font-weight-light text-center text-italic">Register untuk Membuat Akun Anda!</h6>
+
+                            @if(session('success'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
                             <form class="pt-3" method="POST" action="{{ url('/register') }}">
                                 @csrf
                                 <div class="form-group">
@@ -64,7 +71,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend bg-transparent">
                                             <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="mdi mdi-lock-outline text-primary"></i>
+                                            <i class="mdi mdi-lock-outline text-primary"></i>
                                             </span>
                                         </div>
                                         <input type="password" class="form-control form-control-lg border-left-0" name="password" placeholder="Password" required>
@@ -93,7 +100,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6 login-half-bg d-flex flex-row" style="background-image: url('image/gallery/gallery30.jpg'); background-size: cover;">
-                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2024 Kallos Moment. All rights reserved.</p></div>
+                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2024 Kallos Moment. All rights reserved.</p>
+                    </div>
                 </div>
             </div>
             <!-- content-wrapper ends -->
@@ -102,10 +110,8 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-
     <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../js/main.js"></script>
-
 </body>
 </html>

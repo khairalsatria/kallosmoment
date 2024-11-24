@@ -24,195 +24,197 @@
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Marcellus&display=swap"
       rel="stylesheet">
 
-      <style>
+    <style>
 
-.footer {
-    margin-top: auto; /* Mengisi ruang yang tersisa */
-}
-        .navbar-nav .nav-link,
-        .list-unstyled a {
-            transition: font-weight 0.1s ease; /* Animasi transisi untuk perubahan font-weight */
+        .footer {
+            margin-top: auto; /* Mengisi ruang yang tersisa */
+        }
+                .navbar-nav .nav-link,
+                .list-unstyled a {
+                    transition: font-weight 0.1s ease; /* Animasi transisi untuk perubahan font-weight */
+                }
+
+                .navbar-nav .nav-link:hover,
+                .list-unstyled a:hover {
+                    font-weight: 500; /* Mengubah font menjadi bold saat hover */
+                }
+
+
+        /* Gaya untuk label form */
+        .booking-form .form-label {
+            font-weight: bold; /* Menebalkan label */
+            margin-bottom: 5px; /* Jarak bawah label */
         }
 
-        .navbar-nav .nav-link:hover,
-        .list-unstyled a:hover {
-            font-weight: 500; /* Mengubah font menjadi bold saat hover */
+        /* Gaya untuk input dan textarea */
+        .booking-form .form-control {
+            border-radius: 5px; /* Sudut melengkung */
+            padding: 10px; /* Padding dalam input */
+            font-size: 16px; /* Ukuran font input */
+            border: 1px solid #ccc; /* Border */
+            transition: border-color 0.3s; /* Transisi border */
         }
 
+        /* Gaya untuk input ketika fokus */
+        .booking-form .form-control:focus {
+            border-color: #007bff; /* Ubah warna border saat fokus */
+            outline: none; /* Hilangkan outline default */
+        }
 
-/* Gaya untuk label form */
-.booking-form .form-label {
-    font-weight: bold; /* Menebalkan label */
-    margin-bottom: 5px; /* Jarak bawah label */
-}
+        .booking {
+            background-color: #f9f9f9; /* Warna latar belakang */
+            padding: 40px 20px; /* Padding untuk section */
+            border-radius: 8px; /* Sudut melengkung */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+        }
 
-/* Gaya untuk input dan textarea */
-.booking-form .form-control {
-    border-radius: 5px; /* Sudut melengkung */
-    padding: 10px; /* Padding dalam input */
-    font-size: 16px; /* Ukuran font input */
-    border: 1px solid #ccc; /* Border */
-    transition: border-color 0.3s; /* Transisi border */
-}
+        .image-container {
+            display: flex; /* Menggunakan flexbox untuk kontainer gambar */
+            align-items: center; /* Menjaga gambar tetap di tengah secara vertikal */
+            height: 100%; /* Memastikan kontainer gambar mengisi tinggi kolom */
+        }
 
-/* Gaya untuk input ketika fokus */
-.booking-form .form-control:focus {
-    border-color: #007bff; /* Ubah warna border saat fokus */
-    outline: none; /* Hilangkan outline default */
-}
+        .booking img {
+            width: 100%; /* Mengatur lebar gambar agar sesuai dengan kolom */
+            height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+            max-height: 100%; /* Memastikan gambar tidak lebih tinggi dari kontainer */
+            object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+            border-radius: 0 8px 8px 0; /* Sudut melengkung hanya di sisi gambar */
+        }
 
-.booking {
-    background-color: #f9f9f9; /* Warna latar belakang */
-    padding: 40px 20px; /* Padding untuk section */
-    border-radius: 8px; /* Sudut melengkung */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
-}
+        .detail-pemesanan {
+            background-color: #f9f9f9; /* Warna latar belakang */
+            padding: 40px 20px; /* Padding untuk section */
+            border-radius: 8px; /* Sudut melengkung */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+        }
 
-.image-container {
-    display: flex; /* Menggunakan flexbox untuk kontainer gambar */
-    align-items: center; /* Menjaga gambar tetap di tengah secara vertikal */
-    height: 100%; /* Memastikan kontainer gambar mengisi tinggi kolom */
-}
+        .detail-pemesanan h4 {
+            color: #555; /* Warna jud ul */
+        }
 
-.booking img {
-    width: 100%; /* Mengatur lebar gambar agar sesuai dengan kolom */
-    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
-    max-height: 100%; /* Memastikan gambar tidak lebih tinggi dari kontainer */
-    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
-    border-radius: 0 8px 8px 0; /* Sudut melengkung hanya di sisi gambar */
-}
+        .detail-pemesanan p {
+            color: #666; /* Warna teks untuk deskripsi */
+        }
 
-.detail-pemesanan {
-    background-color: #f9f9f9; /* Warna latar belakang */
-    padding: 40px 20px; /* Padding untuk section */
-    border-radius: 8px; /* Sudut melengkung */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
-}
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Memastikan gambar mengisi area */
+        }
 
-.detail-pemesanan h4 {
-    color: #555; /* Warna jud ul */
-}
+        .table {
+            margin-bottom: 0; /* Menghilangkan margin bawah pada tabel */
+        }
 
-.detail-pemesanan p {
-    color: #666; /* Warna teks untuk deskripsi */
-}
+        .btn {
+            margin-top: 20px; /* Menambahkan jarak atas pada tombol */
+        }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Memastikan gambar mengisi area */
-}
+        .btn-primary {
+            background-color: #007bff; /* Warna latar belakang tombol */
+            border-color: #007bff; /* Warna border tombol */
+            color: #fff; /* Warna teks tombol */
+        }
 
-.table {
-    margin-bottom: 0; /* Menghilangkan margin bawah pada tabel */
-}
+        .btn-primary:hover {
+            background-color: #0056b3; /* Warna latar belakang saat hover */
+            border-color: #0056b3; /* Warna border saat hover */
+        }
 
-.btn {
-    margin-top: 20px; /* Menambahkan jarak atas pada tombol */
-}
+        .btn-dark {
+            background-color: #343a40; /* Warna latar belakang tombol gelap */
+            border-color: #343a40; /* Warna border tombol gelap */
+            color: #fff; /* Warna teks tombol gelap */
+        }
 
-.btn-primary {
-    background-color: #007bff; /* Warna latar belakang tombol */
-    border-color: #007bff; /* Warna border tombol */
-    color: #fff; /* Warna teks tombol */
-}
+        .btn-dark:hover {
+            background-color: #23272b; /* Warna latar belakang saat hover untuk tombol gelap */
+            border-color: #1d2124;
+        }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* Warna latar belakang saat hover */
-    border-color: #0056b3; /* Warna border saat hover */
-}
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-.btn-dark {
-    background-color: #343a40; /* Warna latar belakang tombol gelap */
-    border-color: #343a40; /* Warna border tombol gelap */
-    color: #fff; /* Warna teks tombol gelap */
-}
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
 
-.btn-dark:hover {
-    background-color: #23272b; /* Warna latar belakang saat hover untuk tombol gelap */
-    border-color: #1d2124;
-}
+        .table th {
+            background-color: #f8f9fa;
+            color: #495057;
+        }
 
-.table {
-    border-collapse: collapse;
-    width: 100%;
-}
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f2f2f2;
+        }
 
-.table th, .table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #dee2e6;
-}
+        /* Gaya untuk teks yang konsisten di seluruh section */
+        .light-font {
+            color: #333; /* Warna teks */
+            /* font-weight: bold; Menebalkan teks */
+        }
 
-.table th {
-    background-color: #f8f9fa;
-    color: #495057;
-}
+        /* Gaya untuk paragraf */
+        .light-font p {
+            color: #666; /* Warna teks untuk deskripsi */
+            font-weight: normal; /* Tidak menebalkan paragraf */
+        }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
-}
+        .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
+        }
 
-/* Gaya untuk teks yang konsisten di seluruh section */
-.light-font {
-    color: #333; /* Warna teks */
-    /* font-weight: bold; Menebalkan teks */
-}
+        /* public/css/style.css */
+        .profile {
+            background-color: #f8f9fa; /* Warna latar belakang lembut */
+        }
 
-/* Gaya untuk paragraf */
-.light-font p {
-    color: #666; /* Warna teks untuk deskripsi */
-    font-weight: normal; /* Tidak menebalkan paragraf */
-}
+        .card {
+            border-radius: 15px; /* Sudut kartu yang lebih halus */
+        }
 
-.navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-}
+        .card-header {
+            background-color: #ccc; /* Warna latar belakang header kartu */
+            color: white; /* Warna teks header kartu */
+        }
 
-/* public/css/style.css */
-.profile {
-    background-color: #f8f9fa; /* Warna latar belakang lembut */
-}
+        .card-footer .btn {
+            margin: 0 10px; /* Spasi antara tombol */
+        }
 
-.card {
-    border-radius: 15px; /* Sudut kartu yang lebih halus */
-}
+        .card-body div {
+            border-bottom: 1px solid #e9ecef; /* Garis pemisah antar informasi */
+            padding: 10px 0; /* Padding untuk elemen */
+        }
 
-.card-header {
-    background-color: #ccc; /* Warna latar belakang header kartu */
-    color: white; /* Warna teks header kartu */
-}
+        /* public/css/style.css */
+        .riwayat-pemesanan {
+            background-color: #f8f9fa; /* Warna latar belakang lembut */
+        }
 
-.card-footer .btn {
-    margin: 0 10px; /* Spasi antara tombol */
-}
+        .card {
+            border-radius: 10px; /* Sudut kartu yang lebih halus */
+        }
+        .card-footer {
+            background-color: #f1f1f1; /* Warna latar belakang footer kartu */
+        }
 
-.card-body div {
-    border-bottom: 1px solid #e9ecef; /* Garis pemisah antar informasi */
-    padding: 10px 0; /* Padding untuk elemen */
-}
+        .badge {
+            font-size: 0.9em; /* Ukuran font badge */
+        }
 
-/* public/css/style.css */
-.riwayat-pemesanan {
-    background-color: #f8f9fa; /* Warna latar belakang lembut */
-}
+        .alert {
+            border-radius: 5px; /* Sudut alert yang lebih halus */
+        }
 
-.card {
-    border-radius: 10px; /* Sudut kartu yang lebih halus */
-}
-.card-footer {
-    background-color: #f1f1f1; /* Warna latar belakang footer kartu */
-}
-
-.badge {
-    font-size: 0.9em; /* Ukuran font badge */
-}
-
-.alert {
-    border-radius: 5px; /* Sudut alert yang lebih halus */
-}
+        
     </style>
 
   </head>
@@ -348,20 +350,8 @@
       </defs>
     </svg>
 
-
-      @include('layouts.header')
-
-    {{--
-
-    @include('dashboard.layouts.sidebar') --}}
-
-    {{-- <!-- Begin page content -->
-    <main class="flex-shrink-0 content">
-        <div class="container"> --}}
+    @include('layouts.header')
                 @yield('content')
-            {{-- </div> --}}
-    {{-- </main> --}}
-
     @include('layouts.footer')
 
     <script src="/js1/jquery.min.js"></script>

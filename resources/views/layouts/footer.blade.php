@@ -13,7 +13,7 @@
                         --}}
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end text-center">
+                <div class="text-center">
                     <p>Copyright © 2024 Kallos Moment. All rights reserved.</p>
                 </div>
             </div>

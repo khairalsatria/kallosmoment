@@ -66,7 +66,7 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-primary mr-2">Edit</button>
+                            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                             <a href="{{ route('admin-user.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>

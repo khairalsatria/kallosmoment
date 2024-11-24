@@ -35,15 +35,16 @@ class LoginController extends Controller
             if ($user->isAdmin == 2) {
                 return redirect()->intended('kallos-moments'); // Redirect pelanggan
             } else {
-                return redirect()->intended('admin.layout.dashboard'); // Redirect admin
+                return redirect()->intended('admin/dashboard'); // Redirect admin
             }
         }
 
         // Jika login gagal
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Akun tidak ditemukan. Pastikan email dan password anda benar.',
         ])->onlyInput('email');
     }
+
 
     // Logout pengguna
     public function logout(Request $request)
@@ -54,4 +55,5 @@ class LoginController extends Controller
 
         return redirect('kallos-moments'); // Redirect ke halaman home
     }
+    
 }

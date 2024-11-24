@@ -17,7 +17,7 @@
                         @can('admin')
                         <div class="d-flex justify-content-end mb-3">
                             <button onclick="window.print('cetakpdf/jadwal_kerja');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
-                            <a href="{{ route('admin-jadwal_kerja.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Add Data</a>
+                            <a href="{{ route('admin-jadwal_kerja.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
                         </div>
                         @endcan
                         <div class="table-responsive">

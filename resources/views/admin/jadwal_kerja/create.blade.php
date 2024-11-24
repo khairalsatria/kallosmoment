@@ -34,7 +34,7 @@
                                 <label for="status">Status</label>
                                 <input type="text" name="status" class="form-control" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                             <a href="{{ route('admin-jadwal_kerja.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>

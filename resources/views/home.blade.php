@@ -346,21 +346,21 @@
             <div class="social-links">
               <ul class="list-unstyled d-flex flex-wrap gap-3">
                 <li>
-                  <a href="https://www.youtube.com/@hafizenaldo8068" class="text-secondary">
+                  <a href="https://www.youtube.com/@hafizenaldo8068">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#youtube"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.tiktok.com/@kallosmoments" class="text-secondary">
+                  <a href="https://www.tiktok.com/@kallosmoments">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#tiktok"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/kallosmoments_" class="text-secondary">
+                  <a href="https://www.instagram.com/kallosmoments_">
                     <svg width="24" height="24" viewBox="0 0 24 24">
                       <use xlink:href="#instagram"></use>
                     </svg>
@@ -377,16 +377,30 @@
               <li class="menu-item">
                 <a href="#home" class="item-anchor">Home</a>
               </li>
+              @if(Auth::check() && Auth::user()->role == 'pelanggan')
+              <li class="menu-item">
+                <a href="{{ route('pemesanan.create') }}" class="item-anchor">Booking</a>
+              </li>
+              @else
+              <li class="menu-item">
+                <a href="{{ route('login') }}" class="item-anchor">Booking</a>
+              </li>
+              @endif
+              @if(Auth::check() && Auth::user()->role == 'pelanggan')
+              <li class="menu-item">
+                <a href="{{ route('pemesanan.riwayat') }}" class="item-anchor">Riwayat</a>
+              </li>
+              <li class="menu-item">
+                <a href="{{ route('profile.show') }}" class="item-anchor">Profile</a>
+              </li>
+              @else
               <li class="menu-item">
                 <a href="/register" class="item-anchor">Register</a>
               </li>
               <li class="menu-item">
                 <a href="/login" class="item-anchor">Login</a>
               </li>
-              <li class="menu-item">
-                <a href="/user.pemesanan" class="item-anchor">Booking</a>
-              </li>
-
+              @endif
             </ul>
           </div>
         </div>

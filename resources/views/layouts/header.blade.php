@@ -26,13 +26,13 @@
                                 <a class="nav-link" href="/kallos-moments#about">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#gallery">Gallery</a>
+                                <a class="nav-link" href="/kallos-moments#gallery">Gallery</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#packages">Packages</a>
+                                <a class="nav-link" href="/kallos-moments#packages">Packages</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contact</a>
+                                <a class="nav-link" href="/kallos-moments#contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="col-1 col-lg-auto">
-                <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-2 align-items-center"> <!-- Added align-items-center -->
+                <ul class="navbar-nav justify-content-end flex-grow-1 gap-1 gap-md-5 pe-2 align-items-center">
                     @if (session('role') == 'pelanggan')
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <a class="dropdown-item" href="#" onclick="confirmLogout(event);">Logout</a>
                         </ul>
                     </li>
                     @else
@@ -66,12 +66,6 @@
                             <a class="dropdown-item" href="{{ route('register') }}">Register</a>
                         </ul>
                     </li>
-                    {{-- <li class="d-none d-lg-block">
-                        <a href="{{ route('login') }}" class="nav-link text-uppercase">Login<span class="wishlist-count"></span></a>
-                    </li>
-                    <li class="d-none d-lg-block">
-                        <a href="{{ route('register') }}" class="nav-link text-uppercase">Registrasi<span class="wishlist-count"></span></a>
-                    </li> --}}
                     @endif
                     <li class="search-box">
                         <a href="#search" class="search-button">
@@ -82,10 +76,6 @@
                     </li>
                 </ul>
             </div>
-
-
-
-            </div>
         </div>
     </div>
 
@@ -94,13 +84,22 @@
             <form role="search" method="get" class="form-group" action="">
                 <input type="search" id="search-form" class="form-control border-0 border-bottom"
                     placeholder="Type and press enter" value="" name="s" />
-                <button type="submit" class="search-submit border-0 position-absolute bg-white"
+                <button type=" submit" class="search-submit border-0 position-absolute bg-white"
                     style="top: 15px;right: 15px;">
                     <svg class="search" width="24" height="24">
-                        <use xlink :href="#search"></use>
+                        <use xlink:href="#search"></use>
                     </svg>
                 </button>
             </form>
         </div>
     </div>
 </nav>
+
+<script>
+    function confirmLogout(event) {
+        event.preventDefault(); // Prevent the default action
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+            document.getElementById('logout-form').submit(); // Submit the form if confirmed
+        }
+    }
+</script>

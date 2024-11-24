@@ -24,6 +24,20 @@
                             <h6 class="font-weight-light text-center text-italic">Login untuk Mengakses Fitur Kami!</h6>
                             <form class="pt-3" method="POST" action="{{ url('/login') }}">
                                 @csrf
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <div class="input-group">
@@ -47,7 +61,6 @@
                                     </div>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
-
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>
                                 <div class="my-3">

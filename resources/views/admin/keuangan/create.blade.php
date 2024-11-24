@@ -36,7 +36,7 @@
                                 <label for="pengeluaran">Pengeluaran</label>
                                 <input type="number" class="form-control" id="pengeluaran" name="pengeluaran" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                             <a href="{{ route('admin-keuangan.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
 

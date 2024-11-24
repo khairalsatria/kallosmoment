@@ -15,7 +15,7 @@
                         @can('admin')
                         <div class="d-flex justify-content-end mb-3">
                             <button onclick="window.print('cetakpdf/user');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
-                            <a href="{{ route('admin-user.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Add User</a>
+                            <a href="{{ route('admin-user.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
                         </div>
                         @endcan
                         <div class="table-responsive">
@@ -26,7 +26,6 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>No HP</th> <!-- New column for phone number -->
-                                        <th>Role</th>
                                         @can('admin')
                                         <th>Aksi</th>
                                         @endcan
@@ -40,7 +39,6 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->nohp }}</td> <!-- Display the phone number -->
-                                                <td>{{ $user->role }}</td>
                                                 @can('admin')
                                                 <td class="text-nowrap">
                                                     <a href="{{ route('admin-user.show', $user->id) }}" title="Lihat Detail" class="btn btn-success btn-sm"><i class="mdi mdi-eye"></i></a>

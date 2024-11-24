@@ -52,8 +52,8 @@
                                     <small class=" text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <a href="{{ route('admin-jadwal_kerja.index') }}" class="btn btn-secondary">Batal</a>
+                            <button type="submit" class="btn btn-primary mr-2">Simpan</button>
+                            <a href="{{ route('admin-jadwal_kerja.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
                     </div>
                 </div>
