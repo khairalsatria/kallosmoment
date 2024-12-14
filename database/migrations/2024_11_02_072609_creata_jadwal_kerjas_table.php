@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_kategori'); // Kolom untuk nama klien
             $table->date('tanggal_event'); // Kolom untuk tanggal pernikahan
             $table->string('alamat_event'); // Kolom untuk lokasi pemotretan
-            $table->text('catatan')->nullable(); // Kolom untuk catatan tambahan (nullable)
+            $table->string('keterangan'); // Kolom untuk catatan tambahan (nullable)
             $table->string('status')->default('aktif'); // Kolom untuk status (aktif/non-aktif)
             $table->timestamps(); // Kolom created_at dan updated_at
         });

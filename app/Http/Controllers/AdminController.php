@@ -9,10 +9,33 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 {
-    $pemesanans = Pemesanan::all(); // Ambil semua pemesanan
-    return view('admin.pemesanan.index', compact('pemesanans'));
+
+    // Ambil parameter bulan dari request, jika ada
+    $bulan = $request->input('bulan');
+    $tahun = $request->input('tahun');
+
+    // Query data pemesanans
+    $query = Pemesanan::orderBy('created_at');
+
+    // Jika bulan disediakan, filter berdasarkan bulan
+    if ($bulan) {
+        $query->whereMonth('created_at', $bulan);
+    }
+
+    // Jika tahun disediakan, filter berdasarkan tahun
+    if ($tahun) {
+        $query->whereYear('created_at', $tahun);
+    }
+
+    $pemesanan = $query->paginate(10);
+
+    return view('admin.pemesanan.index', data: [
+            'pemesanans' => $pemesanan,
+            'bulan' => $bulan, // Untuk referensi di view
+            'tahun' => $tahun  // Untuk referensi di view
+        ]);
 }
 
     public function konfirmasi($id)
@@ -22,7 +45,7 @@ class AdminController extends Controller
     $pemesanan->save();
 
     // Simpan data pemesanan ke tabel jadwal_kerjas
-    $jadwalKerja = JadwalKerja::create([
+    JadwalKerja::create([
         'nama_klien' => $pemesanan->nama,
         'nama_kategori' => $pemesanan->nama_kategori,
         'tanggal_event' => $pemesanan->tanggal_event,
@@ -36,6 +59,7 @@ class AdminController extends Controller
         'kategori' => $pemesanan->nama_kategori,
         'pendapatan' => $pemesanan->harga * 0.5, // Asumsikan ada kolom 'dp' di model Pemesanan
         'pengeluaran' => 0, // Atau hitung saldo sesuai kebutuhan
+        'keterangan' => 'Pembayaran DP', // Atau hitung saldo sesuai kebutuhan
     ]);
 
     return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil dikonfirmasi.');
@@ -66,16 +90,33 @@ class AdminController extends Controller
         $keuangan->deskripsi = 'Pembayaran lunas untuk pemesanan a/n ' . $pemesanan->nama . ''; // Ubah deskripsi
         $keuangan->tanggal = now();  // Menggunakan tanggal dan waktu saat ini
         $keuangan->pendapatan = $pemesanan->harga; // Ubah pendapatan menjadi harga penuh
+        $keuangan->keterangan = 'Pelunasan'; // Ubah pendapatan menjadi harga penuh
+
         $keuangan->save();
     }
 
     return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil diselesaikan.');
 }
-    public function hapus($id)
-    {
-        $pemesanan = Pemesanan::findOrFail($id);
-        $pemesanan->delete();
+public function hapus($id)
+{
+    // Temukan pemesanan berdasarkan ID
+    $pemesanan = Pemesanan::findOrFail($id);
 
-        return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil dihapus.');
-    }
+    // Debug: Tampilkan deskripsi dan kategori
+
+    // Hapus entri terkait di tabel keuangan
+    Keuangan::where('deskripsi', 'Pembayaran lunas untuk pemesanan a/n ' . $pemesanan->nama)
+        ->where('kategori', $pemesanan->nama_kategori)
+        ->delete();
+
+    // Hapus entri terkait di tabel jadwal_kerja
+    JadwalKerja::where('nama_klien', $pemesanan->nama)
+        ->where('tanggal_event', $pemesanan->tanggal_event)
+        ->delete();
+
+    // Hapus pemesanan itu sendiri
+    $pemesanan->delete();
+
+    return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil dihapus.');
+}
 }

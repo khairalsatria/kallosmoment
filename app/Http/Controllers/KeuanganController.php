@@ -11,11 +11,34 @@ class KeuanganController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // Ambil parameter bulan dari request, jika ada
+        $bulan = $request->input('bulan');
+        $tahun = $request->input('tahun');
+
+        // Query data kategori
+        $query = Keuangan::orderBy('created_at');
+
+        // Jika bulan disediakan, filter berdasarkan bulan
+        if ($bulan) {
+            $query->whereMonth('created_at', $bulan);
+        }
+
+        // Jika tahun disediakan, filter berdasarkan tahun
+        if ($tahun) {
+            $query->whereYear('created_at', $tahun);
+        }
+
+         // Paginasi hasil
+         $keuangan = $query->paginate(10);
+
         // Mengambil data keuangan dan mengurutkannya berdasarkan tanggal
-        $keuangans = Keuangan::orderBy('tanggal', 'asc')->paginate(10);
-        return view('admin.keuangan.index', compact('keuangans'));
+        return view('admin.keuangan.index', [
+            'keuangans' => $keuangan,
+            'bulan' => $bulan, // Untuk referensi di view
+            'tahun' => $tahun  // Untuk referensi di view
+        ]);
     }
 
     public function cetakPdf()
@@ -43,8 +66,8 @@ class KeuanganController extends Controller
             'kategori' => 'required|string|max:100',
             'pendapatan' => 'nullable|numeric|min:0',
             'pengeluaran' => 'nullable|numeric|min:0',
+            'keterangan' => 'required|string|max:100',
             'saldo' => 'nullable|numeric|min:0',
-            'catatan' => 'nullable|string',
         ]);
 
         Keuangan::create($validated);
@@ -80,8 +103,8 @@ class KeuanganController extends Controller
             'kategori' => 'required|string|max:100',
             'pendapatan' => 'nullable|numeric|min:0',
             'pengeluaran' => 'nullable|numeric|min:0',
+            'keterangan' => 'required|string|max:100',
             'saldo' => 'nullable|numeric|min:0',
-            'catatan' => 'nullable|string',
         ]);
 
         Keuangan::where('id', $id)->update($validated);

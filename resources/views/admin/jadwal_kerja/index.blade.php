@@ -14,12 +14,36 @@
                         <p class="card-description">
                             Tabel Jadwal Kerja Event Photography Kallos Moment
                         </p>
-                        @can('admin')
-                        <div class="d-flex justify-content-end mb-3">
-                            <button onclick="window.print('cetakpdf/jadwal_kerja');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
-                            <a href="{{ route('admin-jadwal_kerja.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <form method="GET" action="{{ route('admin-jadwal_kerja.index') }}" class="form-inline">
+                                <p for="bulan" class="mb-md-0 mr-2">Pilih Bulan:</p>
+                                <select name="bulan" id="bulan" class="form-control form-control-sm mr-2" onchange="this.form.submit()">
+                                    <option value="">-- Semua Bulan --</option>
+                                    @for ($i = 1; $i <= 12; $i++)
+                                        <option value="{{ $i }}" {{ request('bulan') == $i ? 'selected' : '' }}>
+                                            {{ DateTime::createFromFormat('!m', $i)->format('F') }}
+                                        </option>
+                                    @endfor
+                                </select>
+
+                                <p for="tahun" class="mb-md-0 mr-2">Pilih Tahun:</p>
+                                <select name="tahun" id="tahun" class="form-control form-control-sm mr-2" onchange="this.form.submit()">
+                                    <option value="">-- Semua Tahun --</option>
+                                    @foreach (range(date('Y') + 2, 2000) as $year)
+                                        <option value="{{ $year }}" {{ request('tahun') == $year ? 'selected' : '' }}>
+                                            {{ $year }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </form>
+                            @can('admin')
+                            <div>
+                                <button onclick="window.print('cetakpdf/jadwal_kerja');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
+                                <a href="{{ route('admin-jadwal_kerja.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
+                            </div>
+                            @endcan
                         </div>
-                        @endcan
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>

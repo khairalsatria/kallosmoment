@@ -14,6 +14,32 @@
                         <p class="card-description">
                             Tabel Pemesanan Wedding Photography Kallos Moment
                         </p>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <form method="GET" action="{{ route('admin.pemesanan.index') }}" class="form-inline">
+                                <p for="bulan" class="mb-md-0 mr-2">Pilih Bulan:</p>
+                                <select name="bulan" id="bulan" class="form-control form-control-sm mr-2" onchange="this.form.submit()">
+                                    <option value="">-- Semua Bulan --</option>
+                                    @for ($i = 1; $i <= 12; $i++)
+                                        <option value="{{ $i }}" {{ request('bulan') == $i ? 'selected' : '' }}>
+                                            {{ DateTime::createFromFormat('!m', $i)->format('F') }}
+                                        </option>
+                                    @endfor
+                                </select>
+                                
+
+                                <p for="tahun" class="mb-md-0 mr-2">Pilih Tahun:</p>
+                                <select name="tahun" id="tahun" class="form-control form-control-sm mr-2" onchange="this.form.submit()">
+                                    <option value="">-- Semua Tahun --</option>
+                                    @foreach (range(date('Y') + 2, 2000) as $year)
+                                        <option value="{{ $year }}" {{ request('tahun') == $year ? 'selected' : '' }}>
+                                            {{ $year }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </form>
+                        </div>
+
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>

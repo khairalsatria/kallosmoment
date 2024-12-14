@@ -8,9 +8,9 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Data User Pelanggan</h4>
+                        <h4 class="card-title">Data User Fotografer</h4>
                         <p class="card-description">
-                            Tabel Data User dengan Role Pelanggan
+                            Tabel Data User dengan Role Fotografer
                         </p>
                         @can('admin')
                         <div class="d-flex justify-content-end mb-3">

@@ -85,19 +85,26 @@
                         <i class="mdi mdi-settings text-primary mr-2"></i>
                         <span>Settings</span>
                     </a> --}}
-                    <a class="dropdown-item d-flex align-items-center" href="#" onclick="confirmLogout(event);">
-                        <i class="mdi mdi-logout text-danger mr-2"></i>
-                        <span>Logout</span>
-                    </a>
+                    <!-- HTML untuk tombol Logout -->
+<a class="dropdown-item d-flex align-items-center" href="#" onclick="konfirmLogout(event);">
+    <i class="mdi mdi-logout text-danger mr-2"></i>
+    <span>Logout</span>
+</a>
 
-                    <script>
-                        function confirmLogout(event) {
-                            event.preventDefault(); // Prevent the default action
-                            if (confirm("Apakah Anda yakin ingin keluar?")) {
-                                document.getElementById('logout-form').submit(); // Submit the form if confirmed
-                            }
-                        }
-                    </script>
+<!-- Form logout -->
+<form id="logout-form" action="/logout" method="POST" style="display: none;">
+    <!-- Tambahkan token CSRF jika diperlukan -->
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+</form>
+
+<script>
+    function konfirmLogout(event) {
+        event.preventDefault(); // Mencegah aksi default
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+            document.getElementById('logout-form').submit(); // Submit form jika dikonfirmasi
+        }
+    }
+</script>
 
                 </div>
             </li>
@@ -109,3 +116,4 @@
         </div>
       </nav>
       <div class="container-fluid page-body-wrapper">
+

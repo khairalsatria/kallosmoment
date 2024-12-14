@@ -20,7 +20,7 @@ class Keuangan extends Model
         'pendapatan',
         'pengeluaran',
         'saldo',
-        'catatan',
+        'keterangan',
     ];
 
     // Jika Anda ingin menambahkan aksesori atau mutator, Anda dapat melakukannya di sini

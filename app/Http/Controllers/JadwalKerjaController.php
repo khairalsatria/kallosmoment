@@ -11,11 +11,36 @@ class JadwalKerjaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+        public function index(Request $request)
     {
-        $jadwalKerjas = JadwalKerja::orderBy('tanggal_event')->paginate(10);
-        return view('admin.jadwal_kerja.index', ['jadwalKerjas' => $jadwalKerjas]);
+        // Ambil parameter bulan dan tahun dari request, jika ada
+        $bulan = $request->input('bulan');
+        $tahun = $request->input('tahun');
+
+        // Query data jadwal kerja
+        $query = JadwalKerja::orderBy('tanggal_event');
+
+        // Jika bulan disediakan, filter berdasarkan bulan
+        if ($bulan) {
+            $query->whereMonth('tanggal_event', $bulan);
+        }
+
+        // Jika tahun disediakan, filter berdasarkan tahun
+        if ($tahun) {
+            $query->whereYear('tanggal_event', $tahun);
+        }
+
+        // Paginasi hasil
+        $jadwalKerjas = $query->paginate(10);
+
+        // Kirim data ke view
+        return view('admin.jadwal_kerja.index', [
+            'jadwalKerjas' => $jadwalKerjas,
+            'bulan' => $bulan, // Untuk referensi di view
+            'tahun' => $tahun  // Untuk referensi di view
+        ]);
     }
+
 
     public function cetakPdf()
     {
@@ -91,4 +116,5 @@ class JadwalKerjaController extends Controller
         JadwalKerja::destroy($id);
         return redirect('admin-jadwal_kerja')->with('pesan', 'Data berhasil dihapus');
     }
+
 }
