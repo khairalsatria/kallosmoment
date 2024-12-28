@@ -62,6 +62,7 @@ class KeuanganController extends Controller
     {
         $validated = $request->validate([
             'tanggal' => 'required|date',
+            'tanggal_event' => 'required|date',
             'deskripsi' => 'required|string|max:255',
             'kategori' => 'required|string|max:100',
             'pendapatan' => 'nullable|numeric|min:0',
@@ -99,6 +100,7 @@ class KeuanganController extends Controller
     {
         $validated = $request->validate([
             'tanggal' => 'required|date',
+            'tanggal_event' => 'required|date',
             'deskripsi' => 'required|string|max:255',
             'kategori' => 'required|string|max:100',
             'pendapatan' => 'nullable|numeric|min:0',

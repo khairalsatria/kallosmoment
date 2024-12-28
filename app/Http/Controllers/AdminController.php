@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Pemesanan;
 use App\Models\JadwalKerja;
 use App\Models\Keuangan;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public function index(Request $request)
 {
-
     // Ambil parameter bulan dari request, jika ada
     $bulan = $request->input('bulan');
     $tahun = $request->input('tahun');
 
     // Query data pemesanans
-    $query = Pemesanan::orderBy('created_at');
+    $query = Pemesanan::orderBy('created_at', 'desc'); // Mengurutkan berdasarkan waktu pembuatan terbaru
 
     // Jika bulan disediakan, filter berdasarkan bulan
     if ($bulan) {
@@ -31,13 +32,12 @@ class AdminController extends Controller
 
     $pemesanan = $query->paginate(10);
 
-    return view('admin.pemesanan.index', data: [
-            'pemesanans' => $pemesanan,
-            'bulan' => $bulan, // Untuk referensi di view
-            'tahun' => $tahun  // Untuk referensi di view
-        ]);
+    return view('admin.pemesanan.index', [
+        'pemesanans' => $pemesanan,
+        'bulan' => $bulan, // Untuk referensi di view
+        'tahun' => $tahun  // Untuk referensi di view
+    ]);
 }
-
     public function konfirmasi($id)
 {
     $pemesanan = Pemesanan::findOrFail($id);
@@ -55,6 +55,7 @@ class AdminController extends Controller
 
     Keuangan::create([
         'tanggal' => now(), // Menggunakan tanggal dan waktu saat ini
+        'tanggal_event' => $pemesanan->tanggal_event,
         'deskripsi' => 'DP untuk pemesanan a/n ' . $pemesanan->nama,
         'kategori' => $pemesanan->nama_kategori,
         'pendapatan' => $pemesanan->harga * 0.5, // Asumsikan ada kolom 'dp' di model Pemesanan
@@ -107,6 +108,7 @@ public function hapus($id)
     // Hapus entri terkait di tabel keuangan
     Keuangan::where('deskripsi', 'Pembayaran lunas untuk pemesanan a/n ' . $pemesanan->nama)
         ->where('kategori', $pemesanan->nama_kategori)
+        ->where('tanggal_event', $pemesanan->tanggal_event)
         ->delete();
 
     // Hapus entri terkait di tabel jadwal_kerja
@@ -118,5 +120,34 @@ public function hapus($id)
     $pemesanan->delete();
 
     return redirect()->route('admin.pemesanan.index')->with('success', 'Pemesanan berhasil dihapus.');
+}
+
+public function show()
+{
+    $user = Auth::user();
+    return view('admin.profile.show', compact('user'));
+}
+
+public function edit()
+{
+    $user = Auth::user();
+    return view('admin.profile.edit', compact('user'));
+}
+
+public function update(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255',
+        'nohp' => 'nullable|string|max:15',
+    ]);
+
+    $user = Auth::user();
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->nohp = $request->nohp;
+    $user->save();
+
+    return redirect()->route('admin.profile.edit')->with('success', 'Profil berhasil diperbarui.');
 }
 }

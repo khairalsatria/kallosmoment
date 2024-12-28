@@ -52,6 +52,12 @@
             <span class="menu-title">Kategori Paket</span>
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin-gallery">
+              <i class="mdi mdi-image menu-icon"></i>
+              <span class="menu-title">Gallery</span>
+            </a>
+          </li>
         </li>
 
       </ul>

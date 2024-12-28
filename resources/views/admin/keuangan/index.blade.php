@@ -37,8 +37,8 @@
                             </form>
                             @can('admin')
                             <div>
-                                <button onclick="window.print('cetakpdf/keuangan');" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
-                            <a href="{{ route('admin-keuangan.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
+                                <a href="{{ route('keuangan.cetakpdf') }}" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</button>
+                                <a href="{{ route('admin-keuangan.create') }}" class="btn btn-primary btn-sm ml-2"><i class="mdi mdi-plus-circle"></i> Tambah Data</a>
                             </div>
                             @endcan
                         </div>

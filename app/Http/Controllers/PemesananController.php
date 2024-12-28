@@ -6,6 +6,7 @@ use App\Models\Pemesanan;
 use App\Models\Kategori; // Pastikan Anda memiliki model Kategori
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Storage;
 
 class PemesananController extends Controller
@@ -14,6 +15,12 @@ class PemesananController extends Controller
         $kategoris = Kategori::all();
         $tanggal_event_terdaftar = Pemesanan::pluck('tanggal_event')->toArray(); // Ambil semua tanggal event yang sudah ada
         return view('pemesanan.create', compact('kategoris', 'tanggal_event_terdaftar'));
+    }
+
+    public function cetakPdf()
+    {
+        $pdf = PDF::loadView('admin.pemesanan.cetakpdf', ['pemesanans' => Pemesanan::all()]);
+        return $pdf->stream('Laporan-Data-Pemesanan.pdf');
     }
     public function store(Request $request)
 {

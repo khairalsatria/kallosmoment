@@ -1,27 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Kategori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="h2">Daftar Kategori</h1>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <tr>
-            <th>No</th>
-            <th>Kode Kategori</th>
-            <th>Nama Kategori</th>
-            <th>Harga</th>
-        </tr>
-        @foreach($kategoris as $kategori)
-        <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td>{{ $kategori->kode_kategori }}</td>
-            <td>{{ $kategori->nama_kategori }}</td>
-            <td>{{ $kategori->harga }}</td>
-        </tr>
-        @endforeach
+    <h1>Daftar Kategori</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Kode Kategori</th>
+                <th>Nama Kategori</th>
+                <th>Harga</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($kategoris as $kategori)
+                <tr>
+                    <td>{{ $kategori->kode_kategori }}</td>
+                    <td>{{ $kategori->nama_kategori }}</td>
+                    <td>{{ $kategori->harga }}</td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
 </body>
 </html>
+    

@@ -81,10 +81,10 @@
                         <small class="text-muted">{{ Auth::check() ? Auth::user()->email : 'guest@example.com' }}</small>
                     </div>
                     <div class="dropdown-divider"></div>
-                    {{-- <a class="dropdown-item d-flex align-items-center" href="#">
+                    <a class="dropdown-item d-flex align-items-center" href='/admin-profile/edit'>
                         <i class="mdi mdi-settings text-primary mr-2"></i>
                         <span>Settings</span>
-                    </a> --}}
+                    </a>
                     <!-- HTML untuk tombol Logout -->
 <a class="dropdown-item d-flex align-items-center" href="#" onclick="konfirmLogout(event);">
     <i class="mdi mdi-logout text-danger mr-2"></i>

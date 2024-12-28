@@ -25,8 +25,9 @@
                                             {{ DateTime::createFromFormat('!m', $i)->format('F') }}
                                         </option>
                                     @endfor
+
                                 </select>
-                                
+
 
                                 <p for="tahun" class="mb-md-0 mr-2">Pilih Tahun:</p>
                                 <select name="tahun" id="tahun" class="form-control form-control-sm mr-2" onchange="this.form.submit()">
@@ -38,6 +39,11 @@
                                     @endforeach
                                 </select>
                             </form>
+                            @can('admin')
+                            <div>
+                                <a href="{{ route('pemesanan.cetakpdf') }}" class="btn btn-info btn-sm"><i class="mdi mdi-download"></i> Cetak</a>
+                            </div>
+                            @endcan
                         </div>
 
                         <div class="table-responsive">
@@ -84,12 +90,12 @@
                                             </td>
                                             <td class="text-nowrap">
                                                 @if($pemesanan->status_pemesanan == 'pending')
-                                                    <form action="{{ route('admin.konfirmasi', $pemesanan->id) }}" method="POST" style="display:inline;">
+                                                    <form action="{{ route('admin.konfirmasi', $pemesanan->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah Anda yakin ingin mengkonfirmasi DP?');">
                                                         @csrf
                                                         <button type="submit" class="btn btn-warning">DP?</button>
                                                     </form>
                                                 @elseif($pemesanan->status_pemesanan == 'dp lunas')
-                                                    <form action="{{ route('admin.done', $pemesanan->id) }}" method="POST" style="display:inline;">
+                                                    <form action="{{ route('admin.done', $pemesanan->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Apakah Anda yakin ingin menyelesaikan pemesanan?');">
                                                         @csrf
                                                         <button type="submit" class="btn btn-success">Done?</button>
                                                     </form>
@@ -112,5 +118,5 @@
         </div>
     </div>
 
-
 @endsection
+

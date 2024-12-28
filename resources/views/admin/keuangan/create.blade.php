@@ -21,6 +21,10 @@
                                 <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                             </div>
                             <div class="form-group">
+                                <label for="tanggal_event">Tanggal Event</label>
+                                <input type="date" class="form-control" id="tanggal_event" name="tanggal_event" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
                                 <input type="text" class="form-control" id="deskripsi" name="deskripsi" required>
                             </div>
@@ -30,15 +34,33 @@
                             </div>
                             <div class="form-group">
                                 <label for="pendapatan">Pendapatan</label>
-                                <input type="number" class="form-control" id="pendapatan" name="pendapatan" required>
+                                <input type="number" class="form-control" id="pendapatan" name="pendapatan" min="0" step="0.01">
                             </div>
                             <div class="form-group">
                                 <label for="pengeluaran">Pengeluaran</label>
-                                <input type="number" class="form-control" id="pengeluaran" name="pengeluaran" required>
+                                <input type="number" class="form-control" id="pengeluaran" name="pengeluaran" min="0" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <label for="keterangan">Keterangan</label>
+                                <input type="text" class="form-control" id="keterangan" name="keterangan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="saldo">Saldo</label>
+                                <input type="number" class="form-control" id="saldo" name="saldo" min="0" step="0.01">
                             </div>
                             <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                             <a href="{{ route('admin-keuangan.index') }}" class="btn btn-secondary">Kembali</a>
                         </form>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger mt-3">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                     </div>
                 </div>

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('keuangans', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal'); // Kolom untuk tanggal transaksi
+            $table->date('tanggal_event'); // Kolom untuk tanggal transaksi
             $table->string('deskripsi'); // Kolom untuk deskripsi transaksi
             $table->string('kategori'); // Kolom untuk kategori transaksi
             $table->decimal('pendapatan', 15, 2)->nullable(); // Kolom untuk pendapatan

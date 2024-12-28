@@ -36,4 +36,6 @@ class ProfileController extends Controller
 
         return redirect()->route('profile.show')->with('success', 'Profil berhasil diperbarui.');
     }
+
+    
 }

@@ -92,6 +92,40 @@
     </section>
 
     <section id="gallery" class="bg-light new-arrival product-carousel py-5 position-relative overflow-hidden">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
+                <h4 class="text-uppercase">Our Gallery</h4>
+                <a href="https://www.instagram.com/kallosmoments_/" class="btn-link">check at our instagram</a>
+            </div>
+            <div class="swiper product-swiper open-up" data-aos="zoom-out">
+                <div class="swiper-wrapper d-flex">
+                    @foreach($gallerys as $gallery)
+                        <div class="swiper-slide">
+                            <div class="product-item image-zoom-effect link-effect">
+                                <div class="image-holder position-relative">
+                                    <img src="{{ asset('storage/' . $gallery->image_gallery) }}" alt="Gallery Image" class="product-image img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="icon-arrow icon-arrow-left">
+                <svg width="50" height="50" viewBox="0 0 24 24">
+                    <use xlink:href="#arrow-left"></use>
+                </svg>
+            </div>
+            <div class="icon-arrow icon-arrow-right">
+                <svg width="50" height="50" viewBox="0 0 24 24">
+                    <use xlink:href="#arrow-right"></use>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+
+    {{-- <section id="gallery" class="bg-light new-arrival product-carousel py-5 position-relative overflow-hidden">
           <div class="container">
             <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
               <h4 class="text-uppercase">Our Gallery</h4>
@@ -190,7 +224,7 @@
                 <use xlink:href="#arrow-right"></use>
               </svg></div>
           </div>
-    </section>
+    </section> --}}
 
     <section id="packages" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
         <div class="container">

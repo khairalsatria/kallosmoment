@@ -15,6 +15,7 @@ class Keuangan extends Model
     // Tentukan kolom yang dapat diisi secara massal
     protected $fillable = [
         'tanggal',
+        'tanggal_event',
         'deskripsi',
         'kategori',
         'pendapatan',

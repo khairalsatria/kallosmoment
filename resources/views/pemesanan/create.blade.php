@@ -71,10 +71,13 @@
 
                                     // Menonaktifkan tanggal yang sudah ada
                                     inputTanggalEvent.addEventListener('input', function() {
-                                        const selectedDate = this.value;
+                                        const selectedDate = this.value; // Format yyyy-mm-dd
                                         if (tanggalSet.has(selectedDate)) {
                                             alert('Tanggal ini sudah terdaftar. Silakan pilih tanggal lain.');
                                             this.value = ''; // Mengosongkan input jika tanggal sudah ada
+                                        } else {
+                                            // Tanggal yang dipilih sudah dalam format yyyy-mm-dd
+                                            console.log('Tanggal yang dipilih:', selectedDate); // Tanggal dalam format yyyy-mm-dd
                                         }
                                     });
                                 });
@@ -92,7 +95,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="image-container">
-                            <img src="/image/gallery/gallery27.jpg" alt="Description of image" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="/image/gallery/gallery9.jpg" alt="Description of image" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </div>

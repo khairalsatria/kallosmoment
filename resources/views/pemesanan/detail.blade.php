@@ -76,7 +76,7 @@
 
                         <div class="col-md-6">
                             <div class="image-container">
-                                <img src="/image/gallery/gallery26.jpg" alt="Description of image" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
+                                <img src="/image/gallery/gallery6.jpg" alt="Description of image" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
                             </div>
                         </div>
                     </div>
