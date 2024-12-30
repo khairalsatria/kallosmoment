@@ -46,29 +46,29 @@
 </div>
 </main> --}}
 
-    <main class="flex-shrink-0 content">
-        <div class="container">
-            <section class="video py-5 overflow-hidden flex-shrink-0 content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="video-content open-up" data-aos="zoom-out">
-                            <div class="video-bg">
-                                <img src="image/gallery/gallery23.jpg" alt="video" class="video-image img-fluid">
-                            </div>
-                            <div class="video-player">
-                                <a href="https://www.youtube.com/@hafizenaldo8068">
-                                  <svg width="24" height="24" viewBox="0 0 24 24">
-                                    <use xlink:href="#play"></use>
-                                  </svg>
-                                    <img src="image/curve.png" alt="pattern" class="text-rotate">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            </div>
-    </main>
+<main class="flex-shrink-0 content">
+  <div class="container">
+      <section class="video py-5 overflow-hidden flex-shrink-0 content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="video-content open-up" data-aos="zoom-out">
+                      <div class="video-bg">
+                          <img src="image/gallery/gallery23.jpg" alt="video" class="video-image img-fluid" style="width: 100%; height: auto;">
+                      </div>
+                      <div class="video-player">
+                          <a href="https://www.youtube.com/@hafizenaldo8068">
+                              <svg width="24" height="24" viewBox="0 0 24 24">
+                                  <use xlink:href="#play"></use>
+                              </svg>
+                              <img src="image/curve.png" alt="pattern" class="text-rotate" style="width: 100%; height: auto;">
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+</main>
 
     <section id="about" class="bg-light position-relative ">
         <div class="container">
@@ -314,6 +314,156 @@
             </div>
         </div>
     </section>
+
+    {{-- <section id="packages" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mt-7 mb-3">
+            <h4 class="text-uppercase">OUR PACKAGES</h4>
+            <a href="pemesanan/create" class="btn-link">Booking Now</a>
+          </div>
+          <div class="swiper product-swiper open-up" data-aos="zoom-out">
+            <div class="swiper-wrapper d-flex">
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/basic1.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create " class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">BASIC PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR 3.000.000</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/silver.jpg" alt="product" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create" class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">SILVER PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR 4.000.000</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/gold.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create" class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">GOLD PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR 6.500.000</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/prewedding.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create" class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">PREWEDDING PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR 1.800.000</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/fileonly.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create" class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">FILE ONLY PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR 1.500.000</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="product-item1 image-zoom-effect link-effect">
+                  <div class="image-holder">
+                    <a href="pemesanan/create">
+                      <img src="image/packages/custom.jpg" alt="categories" class="product-image img-fluid">
+                    </a>
+                    <a href="pemesanan/create" class="btn-icon btn-wishlist">
+                      <svg width="24" height="24" viewBox="0 0 24 24">
+
+                      </svg>
+                    </a>
+                    <div class="product-content">
+                      <h5 class="text-uppercase fs-5 mt-3">
+                        <a href="pemesanan/create">CUSTOM PACKAGE</a>
+                      </h5>
+                      <a href="pemesanan/create" class="text-decoration-none" data-after="Book Now"><span>IDR X.XXX.XXX</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-left"></use>
+            </svg></div>
+          <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
+              <use xlink:href="#arrow-right"></use>
+            </svg></div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-11 text-center" data-aos="fade-up" data-aos-delay="300">
+                <p>*Semua Package sudah termasuk akad dan resepsi serta postweding / afterwedding. Waktu pemotretan wedding max
+                    19.00. Apabila Lokasi Pesta atau Prewedding berada diluar daerah domisili dari KALLOS MOMENTS, Maka Akomodasi,
+                    Kosumsi dan Transportasi akan di Bebankan kepada Calon Client.
+
+                </p>
+              </div>
+            </div>
+    </section> --}}
 
     <section id="contact" class="instagram position-relative  ">
         <div class="d-flex justify-content-center w-100 position-absolute bottom-0 z-1">

@@ -17,17 +17,18 @@ use App\Http\Controllers\GalleryController;
 use App\Models\Pemesanan;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/kallos-moments', function () {
+Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/kallos-moments',[HomeController::class,'index']);
+// Route::get('/kallos-moments',[HomeController::class,'index']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-Route::get('/kallos-moments/#packages', [HomeController::class, 'index'])->name('packages.index');
-Route::get('/kallos-moments/#gallery', [HomeController::class, 'index'])->name('gallery.index');
+Route::get('/#packages', [HomeController::class, 'index'])->name('packages.index');
+Route::get('/#gallery', [HomeController::class, 'index'])->name('gallery.index');
 Route::resource('/admin-gallery', GalleryController::class)->middleware('auth');
 
 Route::get('/admin-profile', [AdminController::class, 'show'])->name('admin.profile.show')->middleware('auth');

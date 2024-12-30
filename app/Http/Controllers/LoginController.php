@@ -33,7 +33,7 @@ class LoginController extends Controller
 
             // Redirect berdasarkan role
             if ($user->isAdmin == 2) {
-                return redirect()->intended('kallos-moments'); // Redirect pelanggan
+                return redirect()->intended(''); // Redirect pelanggan
             } else {
                 return redirect()->intended('admin/dashboard'); // Redirect admin
             }
@@ -53,7 +53,7 @@ class LoginController extends Controller
         $request->session()->invalidate(); // Menghapus session
         $request->session()->regenerateToken(); // Regenerasi token CSRF
 
-        return redirect('kallos-moments'); // Redirect ke halaman home
+        return redirect(''); // Redirect ke halaman home
     }
-    
+
 }

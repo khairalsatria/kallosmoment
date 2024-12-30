@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pemesanan;
 use App\Models\JadwalKerja;
 use App\Models\Keuangan;
+use App\Models\Kategori;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

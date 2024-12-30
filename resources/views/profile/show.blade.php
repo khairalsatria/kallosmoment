@@ -32,7 +32,7 @@
                     </div>
                     <div class="card-footer text-center">
                         <a href="{{ route('profile.edit') }}" class="btn btn-secondary  border border-primary">Edit Profil</a>
-                        <a href="{{ route('logout') }}" class="btn btn-dark">Logout</a>
+                        {{-- <a href="{{ route('logout') }}" class="btn btn-dark">Logout</a> --}}
                     </div>
                 </div>
             </div>

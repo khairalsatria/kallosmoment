@@ -214,7 +214,12 @@
             border-radius: 5px; /* Sudut alert yang lebih halus */
         }
 
-        
+        .video-bg img {
+    width: 100%;
+    height: auto;
+}
+
+
     </style>
 
   </head>
